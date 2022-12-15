@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>course notes - bilibli clone - Hexo</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="Hexo"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Hexo"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="Below are the notes that I took when I was learning the course “SpringBoot2.x实战B站高性能后端项目”(making a high-performance back-end project by imitating Bilibili) CHAPTER 1  project environment setup1.create"><meta property="og:type" content="blog"><meta property="og:title" content="course notes - bilibli clone"><meta property="og:url" content="http://example.com/2022/12/14/course-notes%20bilibilib%20clone-1/"><meta property="og:site_name" content="Hexo"><meta property="og:description" content="Below are the notes that I took when I was learning the course “SpringBoot2.x实战B站高性能后端项目”(making a high-performance back-end project by imitating Bilibili) CHAPTER 1  project environment setup1.create"><meta property="og:locale" content="en_US"><meta property="og:image" content="http://example.com/img/og_image.png"><meta property="article:published_time" content="2022-12-14T12:43:27.000Z"><meta property="article:modified_time" content="2022-12-15T03:53:26.527Z"><meta property="article:author" content="John Doe"><meta property="article:tag" content="notes"><meta property="article:tag" content="course-notes"><meta property="article:tag" content="Java"><meta property="twitter:card" content="summary"><meta property="twitter:image:src" content="http://example.com/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2022/12/14/course-notes%20bilibilib%20clone-1/"},"headline":"course notes - bilibli clone","image":["http://example.com/img/og_image.png"],"datePublished":"2022-12-14T12:43:27.000Z","dateModified":"2022-12-15T03:53:26.527Z","author":{"@type":"Person","name":"John Doe"},"publisher":{"@type":"Organization","name":"Hexo","logo":{"@type":"ImageObject","url":{"text":"Louie's blog"}}},"description":"Below are the notes that I took when I was learning the course “SpringBoot2.x实战B站高性能后端项目”(making a high-performance back-end project by imitating Bilibili) CHAPTER 1  project environment setup1.create"}</script><link rel="canonical" href="http://example.com/2022/12/14/course-notes%20bilibilib%20clone-1/"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-dark.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!--!--><!--!--><!-- hexo injector head_end start --><script>
+  (function () {
+      function switchTab() {
+          if (!location.hash) {
+            return;
+          }
+
+          const $tabMenu = document.querySelector(`a[href="${location.hash}"]`);
+          if (!$tabMenu) {
+            return;
+          }
+
+          const $tabMenuContainer = $tabMenu.parentElement.parentElement;
+          Array.from($tabMenuContainer.children).forEach($menu => $menu.classList.remove('is-active'));
+          Array.from($tabMenuContainer.querySelectorAll('a'))
+              .map($menu => document.getElementById($menu.getAttribute("href").substring(1)))
+              .forEach($content => $content.classList.add('is-hidden'));
+
+          if ($tabMenu) {
+              $tabMenu.parentElement.classList.add('is-active');
+          }
+          const $activeTab = document.querySelector(location.hash);
+          if ($activeTab) {
+              $activeTab.classList.remove('is-hidden');
+          }
+      }
+      switchTab();
+      window.addEventListener('hashchange', switchTab, false);
+  })();
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/">Louie&#039;s blog</a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a><a class="navbar-item search" title="Search" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2022-12-14T12:43:27.000Z" title="12/14/2022, 8:43:27 PM">2022-12-14</time></span><span class="level-item">Updated&nbsp;<time dateTime="2022-12-15T03:53:26.527Z" title="12/15/2022, 11:53:26 AM">2022-12-15</time></span><span class="level-item">5 minutes read (About 733 words)</span></div></div><h1 class="title is-3 is-size-4-mobile">course notes - bilibli clone</h1><div class="content"><p>Below are the notes that I took when I was learning the course “SpringBoot2.x实战B站高性能后端项目”(making a high-performance back-end project by imitating Bilibili)</p>
+<h1 id="CHAPTER-1-project-environment-setup"><a href="#CHAPTER-1-project-environment-setup" class="headerlink" title="CHAPTER 1  project environment setup"></a>CHAPTER 1  project environment setup</h1><h3 id="1-create-a-new-project"><a href="#1-create-a-new-project" class="headerlink" title="1.create a new project"></a>1.create a new project</h3><p>This is a multi-module project, so I need to create several modules. The basic modules in this project are:</p>
+<ul>
+<li>bili-api (controller)</li>
+<li>bili-service</li>
+<li>bili-dao</li>
+</ul>
+<p>​     After creating the  modules above, I need to create configuration files. </p>
+<p>​    bili-api —- 2 configuration files, <code>application-test.properties</code> and <code>application-online.properties</code>. Then in the service module, create a  file that contains the common configurations - <code>application.properties</code></p>
+<h3 id="2-spring-boot-dependencies-and-dependencies-between-moduels"><a href="#2-spring-boot-dependencies-and-dependencies-between-moduels" class="headerlink" title="2. spring boot dependencies and dependencies between moduels"></a>2. spring boot dependencies and dependencies between moduels</h3><p>  (1)  add SpringBoot parent denpendency and spring-web</p>
+<p>  (2) dependencies between moduels : service is dependent on dao and api is dependent on service</p>
+<p><em><strong>errors here:</strong></em></p>
+<ul>
+<li>pom file in bili-api is grayed out and strikethrough</li>
+</ul>
+<p>​          solution: <code>Preferences-Maven-IgnoredFiles</code>, uncheck the pom file.</p>
+<h3 id="3-launch-the-project"><a href="#3-launch-the-project" class="headerlink" title="3. launch the project"></a>3. launch the project</h3><p>  (1) create a <code>BiliApp.java</code> file in bili-api, and add the code below</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">@SpringBootApplication</span><br><span class="line">public class BiliApp</span><br><span class="line">&#123;</span><br><span class="line">    public static void main( String[] args )</span><br><span class="line">    &#123;</span><br><span class="line">     ApplicationContext app = SpringApplication.run(BiliApp.class, args);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>(2)set the profile</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># profile</span><br><span class="line">spring.profiles.active = test</span><br></pre></td></tr></table></figure>
+
+<p>   <em><strong>errors and problems here:</strong></em></p>
+<ul>
+<li>“<code>SpringBootApplication.run</code>“ becomes red</li>
+</ul>
+<p> simply because I wrote <code>SpringBootApplication</code> instead of <code>SpringApplication</code></p>
+<ul>
+<li><p>the icon before configuration file isn’t right. ref:  <a target="_blank" rel="noopener" href="https://blog.51cto.com/u_15441799/4675193">https://blog.51cto.com/u_15441799/4675193</a></p>
+</li>
+<li><p><code>Exception in thread &quot;main&quot; java.lang.NoClassDefFoundError</code></p>
+<p> solution:  I took a lot of time to search on Google, but it was still not solved. Then I noticed that the version of spring-context and the version of spring-boot were shown in the error message, so I tried to upgrade the version of spring-boot, and it worked! </p>
+</li>
+<li><p>profile set in a applicaiton.properties is not detected, error message: <code>No active profile set, falling back to default profiles:default</code></p>
+<p>solution: I set the profile in ‘Edit configuration’ window and it worked. I tested and found that the configuration file in api module can be read properly. But I’m still wondering why setting profile in the configuration file doesn’t work.</p>
+</li>
+<li><p>tomcat jar file broken, error message: <code>tomcat-embed-core-9.0.53.jar; zip file is empty</code></p>
+<p>solution:  delete tomcat-embed-core from external libraries and re-add it.</p>
+</li>
+</ul>
+<h3 id="4-datasource-configuration-and-persistence-layer-setup"><a href="#4-datasource-configuration-and-persistence-layer-setup" class="headerlink" title="4. datasource configuration and  persistence layer setup"></a>4. datasource configuration and  persistence layer setup</h3><p>(1)MySQL  dependency and configurations for datasource</p>
+<p>(2) Mybatis dependency  and configurations for it </p>
+<p>(3) create tesDao&#x2F;controller&#x2F;service</p>
+<p><em><strong>error1</strong></em> : <code>Invalid bound statement (not found): org.example.dao.TestDao.findUserNameById</code></p>
+<p>Actually this error is linked with the profile error above. <code>application.properties</code>  in the parent module is not read. </p>
+<p>some attemption:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@PropertySources(&#123;</span></span><br><span class="line"><span class="meta">        @PropertySource(&quot;classpath:application.properties&quot;)</span></span><br><span class="line"><span class="meta">&#125;)</span></span><br><span class="line"><span class="comment">// I tried to add this before the startup  class and I got an exception :java.io.FileNotFoundException: class path resource [application.properties] cannot be opened because it does not exist</span></span><br></pre></td></tr></table></figure>
+
+<p>So it means that the application.properties file is totally not found by my application.</p>
+<p>After reading <a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_44695793/article/details/107752054">https://blog.csdn.net/weixin_44695793/article/details/107752054</a>, I noticed that there is no target folder in the parent directory, which means that application.properties file is not compiled. </p>
+<p>Then I opened the demonstration file from the course and tried to compare it with mine. Then I noticed that I put the application.properties  file in the wrong place. It should in servcie-module.</p>
+<p>After correcting this, it seems that the problem above is solved. But there is a new problem.</p>
+<p><em><strong>error2</strong></em> : <code>FileNotFoundException: class path resource [mapper/*.xml] cannot be opened because it does not exist</code></p>
+<p>solution:</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mybatis.config-location=classpath:mapper/*.xml</span><br><span class="line"># I wronly wrote the configuration. The right one should be: </span><br><span class="line">mybatis.mapper-locations=classpath:mapper/*.xml </span><br><span class="line"># notice: * mapper / * locations</span><br></pre></td></tr></table></figure>
+
+<h3 id="5-hot-deployment"><a href="#5-hot-deployment" class="headerlink" title="5.  hot deployment"></a>5.  hot deployment</h3><p>(1)preferences- compiler - check build project automatically</p>
+<p>(2) command + option +shift + &#x2F;  open Maintenance window, click ‘registry’, check the following two options:</p>
+<ul>
+<li>compiler.document.save.enabled</li>
+<li>compiler.automake.allow.when.app.runningi(for newer edition of IDEA, go to Preferences-Advanced Settings- check ‘Allow auto-mae to start even if deveploped application is currently running’)</li>
+</ul>
+<p>(3)click edit-configuration  </p>
+<p>​    change ‘on Update action’ and ‘on frame deactivation’ to ‘update classes and resources’.</p>
+<p>(4) add  spring-devtools dependency and configuration</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">spring.devtools.restart.enabled=true</span><br></pre></td></tr></table></figure>
+
+<p>In fact, it didn’t work after I had followed the instructions aboved, which are given by the instructor of the course. I did what was said in <a target="_blank" rel="noopener" href="https://blog.csdn.net/luokha/article/details/119746359">https://blog.csdn.net/luokha/article/details/119746359</a> (check compiler-compile indepenetd modules in parallel). Then it worked.</p>
+</div><div class="article-licensing box"><div class="licensing-title"><p>course notes - bilibli clone</p><p><a href="http://example.com/2022/12/14/course-notes bilibilib clone-1/">http://example.com/2022/12/14/course-notes bilibilib clone-1/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>Author</h6><p>John Doe</p></div></div><div class="level-item is-narrow"><div><h6>Posted on</h6><p>2022-12-14</p></div></div><div class="level-item is-narrow"><div><h6>Updated on</h6><p>2022-12-15</p></div></div><div class="level-item is-narrow"><div><h6>Licensed under</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="icons" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="icon fab fa-creative-commons-by"></i></a><a class="icons" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/notes/">notes</a><a class="link-muted mr-2" rel="tag" href="/tags/course-notes/">course-notes</a><a class="link-muted mr-2" rel="tag" href="/tags/Java/">Java</a></div><div class="notification is-danger">You need to set <code>install_url</code> to use ShareThis. Please set it in <code>_config.yml</code>.</div></article></div><div class="card"><div class="card-content"><h3 class="menu-label has-text-centered">Like this article? Support the author with</h3><div class="buttons is-centered"><a class="button donate" href="/" target="_blank" rel="noopener" data-type="afdian"><span class="icon is-small"><i class="fas fa-charging-station"></i></span><span>Afdian.net</span></a><a class="button donate" data-type="alipay"><span class="icon is-small"><i class="fab fa-alipay"></i></span><span>Alipay</span><span class="qrcode"><img src="/" alt="Alipay"></span></a><a class="button donate" href="/" target="_blank" rel="noopener" data-type="buymeacoffee"><span class="icon is-small"><i class="fas fa-coffee"></i></span><span>Buy me a coffee</span></a><a class="button donate" href="/" target="_blank" rel="noopener" data-type="patreon"><span class="icon is-small"><i class="fab fa-patreon"></i></span><span>Patreon</span></a><div class="notification is-danger">You forgot to set the <code>business</code> or <code>currency_code</code> for Paypal. Please set it in <code>_config.yml</code>.</div><a class="button donate" data-type="wechat"><span class="icon is-small"><i class="fab fa-weixin"></i></span><span>Wechat</span><span class="qrcode"><img src="/" alt="Wechat"></span></a></div></div></div><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/2022/12/14/Leetcode-1-Two-Sum/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">Leetcode 1 Two Sum</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/2022/12/14/hello-world/"><span class="level-item">Hello World</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">Comments</h3><div class="notification is-danger">You forgot to set the <code>shortname</code> for Disqus. Please set it in <code>_config.yml</code>.</div></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar is-rounded" src="/img/avatar.png" alt="Louie"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">Louie</p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">Posts</p><a href="/archives"><p class="title">3</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Category</p><a href="/categories"><p class="title">1</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Tags</p><a href="/tags"><p class="title">4</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/" target="_blank" rel="noopener">Follow</a></div></div></div><!--!--><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">Categories</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/Leetcode/"><span class="level-start"><span class="level-item">Leetcode</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></div></div></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">Recents</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-12-14T13:18:58.000Z">2022-12-14</time></p><p class="title"><a href="/2022/12/14/Leetcode-1-Two-Sum/">Leetcode 1 Two Sum</a></p><p class="categories"><a href="/categories/Leetcode/">Leetcode</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-12-14T12:43:27.000Z">2022-12-14</time></p><p class="title"><a href="/2022/12/14/course-notes%20bilibilib%20clone-1/">course notes - bilibli clone</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-12-14T11:10:52.325Z">2022-12-14</time></p><p class="title"><a href="/2022/12/14/hello-world/">Hello World</a></p></div></article></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">Archives</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2022/12/"><span class="level-start"><span class="level-item">December 2022</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li></ul></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">Tags</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/Java/"><span class="tag">Java</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Leetcode/"><span class="tag">Leetcode</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/course-notes/"><span class="tag">course-notes</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/notes/"><span class="tag">notes</span><span class="tag">1</span></a></div></div></div></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/">Louie&#039;s blog</a><p class="is-size-7"><span>&copy; 2022 John Doe</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("en");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="Back to top" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "This website uses cookies to improve your experience.",
+          dismiss: "Got it!",
+          allow: "Allow cookies",
+          deny: "Decline",
+          link: "Learn more",
+          policy: "Cookie Policy",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="Type something..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"Type something...","untitled":"(Untitled)","posts":"Posts","pages":"Pages","categories":"Categories","tags":"Tags"});
+        });</script></body></html>
