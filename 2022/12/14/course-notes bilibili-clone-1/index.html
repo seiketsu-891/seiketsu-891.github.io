@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html class="has-navbar-fixed-top">
+<head>
+    <meta charset="utf-8">
+<title>course notes - bilibli clone - Louie&#39;s blog</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/outdated-browser/1.1.5/outdatedbrowser.min.css">
+
+
+
+
+<meta name="description" content="">
+
+
+
+
+
+    <meta name="description" content="Below are the notes that I took when I was learning the course “SpringBoot2.x实战B站高性能后端项目”(making a high-performance back-end project by imitating Bilibili) CHAPTER 1  project environment setup1.create">
+<meta property="og:type" content="article">
+<meta property="og:title" content="course notes - bilibli clone">
+<meta property="og:url" content="http://example.com/2022/12/14/course-notes%20bilibili-clone-1/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Below are the notes that I took when I was learning the course “SpringBoot2.x实战B站高性能后端项目”(making a high-performance back-end project by imitating Bilibili) CHAPTER 1  project environment setup1.create">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-12-14T12:43:27.000Z">
+<meta property="article:modified_time" content="2022-12-21T08:55:05.105Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="notes">
+<meta property="article:tag" content="course-notes">
+<meta property="article:tag" content="Java">
+<meta name="twitter:card" content="summary">
+
+
+
+
+
+<link rel="icon" href="/favicon.png">
+
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Ovo|Source+Code+Pro">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
+
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.8/css/lightgallery.min.css">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/justifiedGallery/3.6.5/css/justifiedGallery.min.css">
+
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+<script defer src="//use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+<body>
+    
+<nav class="navbar is-transparent is-fixed-top navbar-main" role="navigation" aria-label="main navigation">
+    <div class="container">
+        <div class="navbar-brand">
+            <a class="navbar-item navbar-logo" href="/">
+                
+                <img src="/images/logo.png" alt="" height="28">
+                
+            </a>
+            <div class="navbar-burger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        
+        <div class="navbar-menu navbar-start">
+            
+            <a class="navbar-item "
+               href="/archives">Archives</a>
+            
+            <a class="navbar-item "
+               href="/categories">Categories</a>
+            
+            <a class="navbar-item "
+               href="/tags">Tags</a>
+            
+            <a class="navbar-item "
+               href="/about">About</a>
+            
+        </div>
+        
+        <div class="navbar-menu navbar-end">
+            
+            <a class="navbar-item search" title="Search" href="javascript:;">
+                <i class="fas fa-search"></i>
+            </a>
+            
+            
+            
+            <a class="navbar-item" title="GitHub" target="_blank" rel="noopener" href="https://github.com/ppoffice/hexo-theme-minos">
+                
+                <i class="fab fa-github"></i>
+                
+            </a>
+               
+            
+        </div>
+    </div>
+</nav>
+
+    <section class="section">
+    <div class="container">
+    <article class="article content gallery" itemscope itemprop="blogPost">
+    <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
+        
+            course notes - bilibli clone
+        
+    </h1>
+    <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
+        <span class="column is-narrow">
+            
+                <time datetime="2022-12-14T12:43:27.000Z" itemprop="datePublished">Dec 14 2022</time>
+            
+        </span>
+        
+        
+    </div>
+    <div class="article-entry is-size-6-mobile" itemprop="articleBody">
+    
+        <html><head></head><body><p>Below are the notes that I took when I was learning the course “SpringBoot2.x实战B站高性能后端项目”(making a high-performance back-end project by imitating Bilibili)</p>
+<h1 id="CHAPTER-1-project-environment-setup"><a href="#CHAPTER-1-project-environment-setup" class="headerlink" title="CHAPTER 1  project environment setup"></a>CHAPTER 1  project environment setup</h1><h3 id="1-create-a-new-project"><a href="#1-create-a-new-project" class="headerlink" title="1.create a new project"></a>1.create a new project</h3><p>This is a multi-module project, so I need to create several modules. The basic modules in this project are:</p>
+<ul>
+<li>bili-api (controller)</li>
+<li>bili-service</li>
+<li>bili-dao</li>
+</ul>
+<p>​     After creating the  modules above, I need to create configuration files. </p>
+<p>​    bili-api —- 2 configuration files, <code>application-test.properties</code> and <code>application-online.properties</code>. Then in the service module, create a  file that contains the common configurations - <code>application.properties</code></p>
+<span id="more"></span>
+
+<h3 id="2-spring-boot-dependencies-and-dependencies-between-moduels"><a href="#2-spring-boot-dependencies-and-dependencies-between-moduels" class="headerlink" title="2. spring boot dependencies and dependencies between moduels"></a>2. spring boot dependencies and dependencies between moduels</h3><p>  (1)  add SpringBoot parent denpendency and spring-web</p>
+<p>  (2) dependencies between moduels : service is dependent on dao and api is dependent on service</p>
+<p><em><strong>errors here:</strong></em></p>
+<ul>
+<li>pom file in bili-api is grayed out and strikethrough</li>
+</ul>
+<p>​          solution: <code>Preferences-Maven-IgnoredFiles</code>, uncheck the pom file.</p>
+<h3 id="3-launch-the-project"><a href="#3-launch-the-project" class="headerlink" title="3. launch the project"></a>3. launch the project</h3><p>  (1) create a <code>BiliApp.java</code> file in bili-api, and add the code below</p>
+<figure class="highlight java hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">@SpringBootApplication</span></span><br><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="title class_">BiliApp</span></span><br><span class="line">{</span><br><span class="line">    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="title function_">main</span><span class="hljs-params">( String[] args )</span></span><br><span class="line">    {</span><br><span class="line">     <span class="hljs-type">ApplicationContext</span> <span class="hljs-variable">app</span> <span class="hljs-operator">=</span> SpringApplication.run(BiliApp.class, args);</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+
+<p>(2)set the profile</p>
+<figure class="highlight xml hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># profile</span><br><span class="line">spring.profiles.active = test</span><br></pre></td></tr></tbody></table></figure>
+
+<p>   <em><strong>errors and problems here:</strong></em></p>
+<ul>
+<li>“<code>SpringBootApplication.run</code>“ becomes red</li>
+</ul>
+<p> simply because I wrote <code>SpringBootApplication</code> instead of <code>SpringApplication</code></p>
+<ul>
+<li><p>the icon before configuration file isn’t right. ref:  <a target="_blank" rel="noopener" href="https://blog.51cto.com/u_15441799/4675193">https://blog.51cto.com/u_15441799/4675193</a></p>
+</li>
+<li><p><code>Exception in thread "main" java.lang.NoClassDefFoundError</code></p>
+<p> solution:  I took a lot of time to search on Google, but it was still not solved. Then I noticed that the version of spring-context and the version of spring-boot were shown in the error message, so I tried to upgrade the version of spring-boot, and it worked! </p>
+</li>
+<li><p>profile set in a applicaiton.properties is not detected, error message: <code>No active profile set, falling back to default profiles:default</code></p>
+<p>solution: I set the profile in ‘Edit configuration’ window and it worked. I tested and found that the configuration file in api module can be read properly. But I’m still wondering why setting profile in the configuration file doesn’t work.</p>
+</li>
+<li><p>tomcat jar file broken, error message: <code>tomcat-embed-core-9.0.53.jar; zip file is empty</code></p>
+<p>solution:  delete tomcat-embed-core from external libraries and re-add it.</p>
+</li>
+</ul>
+<h3 id="4-datasource-configuration-and-persistence-layer-setup"><a href="#4-datasource-configuration-and-persistence-layer-setup" class="headerlink" title="4. datasource configuration and  persistence layer setup"></a>4. datasource configuration and  persistence layer setup</h3><p>(1)MySQL  dependency and configurations for datasource</p>
+<p>(2) Mybatis dependency  and configurations for it </p>
+<p>(3) create tesDao/controller/service</p>
+<p><em><strong>error1</strong></em> : <code>Invalid bound statement (not found): org.example.dao.TestDao.findUserNameById</code></p>
+<p>Actually this error is linked with the profile error above. <code>application.properties</code>  in the parent module is not read. </p>
+<p>some attemption:</p>
+<figure class="highlight java hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">@PropertySources({</span></span><br><span class="line"><span class="hljs-meta">        @PropertySource("classpath:application.properties")</span></span><br><span class="line"><span class="hljs-meta">})</span></span><br><span class="line"><span class="hljs-comment">// I tried to add this before the startup  class and I got an exception :java.io.FileNotFoundException: class path resource [application.properties] cannot be opened because it does not exist</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>So it means that the application.properties file is totally not found by my application.</p>
+<p>After reading <a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_44695793/article/details/107752054">https://blog.csdn.net/weixin_44695793/article/details/107752054</a>, I noticed that there is no target folder in the parent directory, which means that application.properties file is not compiled. </p>
+<p>Then I opened the demonstration file from the course and tried to compare it with mine. Then I noticed that I put the application.properties  file in the wrong place. It should in servcie-module.</p>
+<p>After correcting this, it seems that the problem above is solved. But there is a new problem.</p>
+<p><em><strong>error2</strong></em> : <code>FileNotFoundException: class path resource [mapper/*.xml] cannot be opened because it does not exist</code></p>
+<p>solution:</p>
+<figure class="highlight xml hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mybatis.config-location=classpath:mapper/*.xml</span><br><span class="line"># I wronly wrote the configuration. The right one should be: </span><br><span class="line">mybatis.mapper-locations=classpath:mapper/*.xml </span><br><span class="line"># notice: * mapper / * locations</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="5-hot-deployment"><a href="#5-hot-deployment" class="headerlink" title="5.  hot deployment"></a>5.  hot deployment</h3><p>(1)preferences- compiler - check build project automatically</p>
+<p>(2) command + option +shift + /  open Maintenance window, click ‘registry’, check the following two options:</p>
+<ul>
+<li>compiler.document.save.enabled</li>
+<li>compiler.automake.allow.when.app.runningi(for newer edition of IDEA, go to Preferences-Advanced Settings- check ‘Allow auto-mae to start even if deveploped application is currently running’)</li>
+</ul>
+<p>(3)click edit-configuration  </p>
+<p>​    change ‘on Update action’ and ‘on frame deactivation’ to ‘update classes and resources’.</p>
+<p>(4) add  spring-devtools dependency and configuration</p>
+<figure class="highlight xml hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">spring.devtools.restart.enabled=true</span><br></pre></td></tr></tbody></table></figure>
+
+<p>In fact, it didn’t work after I had followed the instructions aboved, which are given by the instructor of the course. I did what was said in <a target="_blank" rel="noopener" href="https://blog.csdn.net/luokha/article/details/119746359">https://blog.csdn.net/luokha/article/details/119746359</a> (check compiler-compile indepenetd modules in parallel). Then it worked.</p>
+</body></html>
+    
+    </div>
+    
+    <div class="columns is-variable is-1 is-multiline is-mobile">
+    
+        <span class="column is-narrow"><a class="tag is-light article-tag" href="/tags/notes/">#notes</a></span>
+    
+        <span class="column is-narrow"><a class="tag is-light article-tag" href="/tags/course-notes/">#course-notes</a></span>
+    
+        <span class="column is-narrow"><a class="tag is-light article-tag" href="/tags/Java/">#Java</a></span>
+    
+    </div>
+    
+    
+    <div class="columns is-mobile is-multiline article-nav">
+        <span class="column is-12-mobile is-half-desktop  article-nav-prev">
+            
+            <a href="/2022/12/14/Leetcode-1-Two-Sum/">Leetcode 1 Two Sum</a>
+            
+        </span>
+        <span class="column is-12-mobile is-half-desktop  article-nav-next">
+            
+            <a href="/2022/12/14/hello-world/">Hello World</a>
+            
+        </span>
+    </div>
+    
+</article>
+
+
+
+
+    </div>
+</section>
+    <footer class="footer">
+    <div class="container">
+        <div class="columns content">
+            <div class="column is-narrow has-text-centered">
+                &copy; 2022 Louie&nbsp;
+                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a
+                        target="_blank" rel="noopener" href="http://github.com/ppoffice/hexo-theme-minos">Minos</a>
+            </div>
+            <div class="column is-hidden-mobile"></div>
+
+           
+            
+        </div>
+    </div>
+</footer>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment-with-locales.min.js"></script>
+
+<!-- test if the browser is outdated -->
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" target="_blank" rel="noopener" href="http://outdatedbrowser.com/">Update my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="//cdnjs.cloudflare.com/ajax/libs/outdated-browser/1.1.5/outdatedbrowser.min.js"></script>
+<script>
+    $(document).ready(function () {
+        // plugin function, place inside DOM ready function
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        })
+    });
+</script>
+
+<script>
+    window.FontAwesomeConfig = {
+        searchPseudoElements: true
+    }
+    moment.locale("en-AU");
+</script>
+
+
+    
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<script>
+    MathJax.Hub.Config({
+        "HTML-CSS": {
+            matchFontHeight: false
+        },
+        SVG: {
+            matchFontHeight: false
+        },
+        CommonHTML: {
+            matchFontHeight: false
+        },
+        tex2jax: {
+            inlineMath: [
+                ['$','$'],
+                ['\\(','\\)']
+            ]
+        }
+    });
+</script>
+
+    
+    
+    
+    
+<script src="//cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.8/js/lightgallery-all.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/justifiedGallery/3.6.5/js/jquery.justifiedGallery.min.js"></script>
+<script>
+    (function ($) {
+        $(document).ready(function () {
+            if (typeof($.fn.lightGallery) === 'function') {
+                $('.article.gallery').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof($.fn.justifiedGallery) === 'function') {
+                $('.justified-gallery > p > .gallery-item').unwrap();
+                $('.justified-gallery').justifiedGallery();
+            }
+        });
+    })(jQuery);
+</script>
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
+    <style>
+        .hljs {
+            position: relative;
+        }
+
+        .hljs .clipboard-btn {
+            float: right;
+            color: #9a9a9a;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .hljs .clipboard-btn:hover {
+          color: #8a8a8a;
+        }
+
+        .hljs > .clipboard-btn {
+            display: none;
+            position: absolute;
+            right: 4px;
+            top: 4px;
+        }
+
+        .hljs:hover > .clipboard-btn {
+            display: inline;
+        }
+
+        .hljs > figcaption > .clipboard-btn {
+            margin-right: 4px;
+        }
+    </style>
+    <script>
+      $(document).ready(function () {
+        $('figure.hljs').each(function(i, figure) {
+          var codeId = 'code-' + i;
+          var code = figure.querySelector('.code');
+          var copyButton = $('<button>Copy <i class="far fa-clipboard"></i></button>');
+          code.id = codeId;
+          copyButton.addClass('clipboard-btn');
+          copyButton.attr('data-clipboard-target-id', codeId);
+
+          var figcaption = figure.querySelector('figcaption');
+
+          if (figcaption) {
+            figcaption.append(copyButton[0]);
+          } else {
+            figure.prepend(copyButton[0]);
+          }
+        })
+
+        var clipboard = new ClipboardJS('.clipboard-btn', {
+          target: function(trigger) {
+            return document.getElementById(trigger.getAttribute('data-clipboard-target-id'));
+          }
+        });
+        clipboard.on('success', function(e) {
+          e.clearSelection();
+        })
+      })
+    </script>
+
+    
+    
+
+    
+
+
+
+<script src="/js/script.js"></script>
+
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-mask"></div>
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="Type something..." />
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: 'Posts',
+                PAGES: 'Pages',
+                CATEGORIES: 'Categories',
+                TAGS: 'Tags',
+                UNTITLED: '(Untitled)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+    
+</body>
+</html>

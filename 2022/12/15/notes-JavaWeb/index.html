@@ -1,126 +1,496 @@
-<!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>notes-JavaWeb - Hexo</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="Hexo"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Hexo"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="1. Tomcaterror1: 404 I think there are some problems with the version of the Tomcat. My local tomcat is 8.5.50, but the version shown on the 404 page is 9.0.68(which is  the version of the Tomcat in t"><meta property="og:type" content="blog"><meta property="og:title" content="notes-JavaWeb"><meta property="og:url" content="http://example.com/2022/12/15/notes-JavaWeb/"><meta property="og:site_name" content="Hexo"><meta property="og:description" content="1. Tomcaterror1: 404 I think there are some problems with the version of the Tomcat. My local tomcat is 8.5.50, but the version shown on the 404 page is 9.0.68(which is  the version of the Tomcat in t"><meta property="og:locale" content="en_US"><meta property="og:image" content="http://example.com/img/og_image.png"><meta property="article:published_time" content="2022-12-15T10:39:31.000Z"><meta property="article:modified_time" content="2022-12-16T03:27:22.540Z"><meta property="article:author" content="John Doe"><meta property="article:tag" content="JavaWeb"><meta property="twitter:card" content="summary"><meta property="twitter:image:src" content="http://example.com/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2022/12/15/notes-JavaWeb/"},"headline":"notes-JavaWeb","image":["http://example.com/img/og_image.png"],"datePublished":"2022-12-15T10:39:31.000Z","dateModified":"2022-12-16T03:27:22.540Z","author":{"@type":"Person","name":"John Doe"},"publisher":{"@type":"Organization","name":"Hexo","logo":{"@type":"ImageObject","url":{"text":"Louie's blog"}}},"description":"1. Tomcaterror1: 404 I think there are some problems with the version of the Tomcat. My local tomcat is 8.5.50, but the version shown on the 404 page is 9.0.68(which is  the version of the Tomcat in t"}</script><link rel="canonical" href="http://example.com/2022/12/15/notes-JavaWeb/"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/isbl-editor-dark.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto Serif Simplified Chinese:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!--!--><!--!--><!-- hexo injector head_end start --><script>
-  (function () {
-      function switchTab() {
-          if (!location.hash) {
-            return;
-          }
+<!DOCTYPE html>
+<html class="has-navbar-fixed-top">
+<head>
+    <meta charset="utf-8">
+<title>notes-JavaWeb - Louie&#39;s blog</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-          const $tabMenu = document.querySelector(`a[href="${location.hash}"]`);
-          if (!$tabMenu) {
-            return;
-          }
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/outdated-browser/1.1.5/outdatedbrowser.min.css">
 
-          const $tabMenuContainer = $tabMenu.parentElement.parentElement;
-          Array.from($tabMenuContainer.children).forEach($menu => $menu.classList.remove('is-active'));
-          Array.from($tabMenuContainer.querySelectorAll('a'))
-              .map($menu => document.getElementById($menu.getAttribute("href").substring(1)))
-              .forEach($content => $content.classList.add('is-hidden'));
 
-          if ($tabMenu) {
-              $tabMenu.parentElement.classList.add('is-active');
-          }
-          const $activeTab = document.querySelector(location.hash);
-          if ($activeTab) {
-              $activeTab.classList.remove('is-hidden');
-          }
-      }
-      switchTab();
-      window.addEventListener('hashchange', switchTab, false);
-  })();
-  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/">Louie&#039;s blog</a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a><a class="navbar-item search" title="Search" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2022-12-15T10:39:31.000Z" title="12/15/2022, 6:39:31 PM">2022-12-15</time></span><span class="level-item">Updated&nbsp;<time dateTime="2022-12-16T03:27:22.540Z" title="12/16/2022, 11:27:22 AM">2022-12-16</time></span><span class="level-item"><a class="link-muted" href="/categories/JavaWeb/">JavaWeb</a></span></div></div><h1 class="title is-3 is-size-4-mobile">notes-JavaWeb</h1><div class="content"><h1 id="1-Tomcat"><a href="#1-Tomcat" class="headerlink" title="1. Tomcat"></a>1. Tomcat</h1><p><em><strong>error1</strong></em>: 404</p>
+
+
+<meta name="description" content="">
+
+
+
+
+
+    <meta name="description" content="1. Tomcaterror1: 404 I think there are some problems with the version of the Tomcat. My local tomcat is 8.5.50, but the version shown on the 404 page is 9.0.68(which is  the version of the Tomcat in t">
+<meta property="og:type" content="article">
+<meta property="og:title" content="notes-JavaWeb">
+<meta property="og:url" content="http://example.com/2022/12/15/notes-JavaWeb/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="1. Tomcaterror1: 404 I think there are some problems with the version of the Tomcat. My local tomcat is 8.5.50, but the version shown on the 404 page is 9.0.68(which is  the version of the Tomcat in t">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-12-15T10:39:31.000Z">
+<meta property="article:modified_time" content="2022-12-21T08:54:36.257Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="JavaWeb">
+<meta name="twitter:card" content="summary">
+
+
+
+
+
+<link rel="icon" href="/favicon.png">
+
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Ovo|Source+Code+Pro">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
+
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.8/css/lightgallery.min.css">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/justifiedGallery/3.6.5/css/justifiedGallery.min.css">
+
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+<script defer src="//use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+<body>
+    
+<nav class="navbar is-transparent is-fixed-top navbar-main" role="navigation" aria-label="main navigation">
+    <div class="container">
+        <div class="navbar-brand">
+            <a class="navbar-item navbar-logo" href="/">
+                
+                <img src="/images/logo.png" alt="" height="28">
+                
+            </a>
+            <div class="navbar-burger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        
+        <div class="navbar-menu navbar-start">
+            
+            <a class="navbar-item "
+               href="/archives">Archives</a>
+            
+            <a class="navbar-item "
+               href="/categories">Categories</a>
+            
+            <a class="navbar-item "
+               href="/tags">Tags</a>
+            
+            <a class="navbar-item "
+               href="/about">About</a>
+            
+        </div>
+        
+        <div class="navbar-menu navbar-end">
+            
+            <a class="navbar-item search" title="Search" href="javascript:;">
+                <i class="fas fa-search"></i>
+            </a>
+            
+            
+            
+            <a class="navbar-item" title="GitHub" target="_blank" rel="noopener" href="https://github.com/ppoffice/hexo-theme-minos">
+                
+                <i class="fab fa-github"></i>
+                
+            </a>
+               
+            
+        </div>
+    </div>
+</nav>
+
+    <section class="section">
+    <div class="container">
+    <article class="article content gallery" itemscope itemprop="blogPost">
+    <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
+        
+            notes-JavaWeb
+        
+    </h1>
+    <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
+        <span class="column is-narrow">
+            
+                <time datetime="2022-12-15T10:39:31.000Z" itemprop="datePublished">Dec 15 2022</time>
+            
+        </span>
+        
+        <span class="column is-narrow article-category">
+            <i class="far fa-folder"></i>
+            <a class="article-category-link" href="/categories/JavaWeb/">JavaWeb</a>
+        </span>
+        
+        
+    </div>
+    <div class="article-entry is-size-6-mobile" itemprop="articleBody">
+    
+        <html><head></head><body><h1 id="1-Tomcat"><a href="#1-Tomcat" class="headerlink" title="1. Tomcat"></a>1. Tomcat</h1><p><em><strong>error1</strong></em>: 404</p>
 <p>I think there are some problems with the version of the Tomcat. My local tomcat is 8.5.50, but the version shown on the 404 page is 9.0.68(which is  the version of the Tomcat in the bilibili -clone project. )</p>
 <p>Although I think the version of tomcat in these 2 projects don’t impact each other… but to solve this 404 problem, I decided to download Tomcat 9.0.68.</p>
 <p>Then errro2 appears….</p>
 <p><em><strong>error2</strong></em> : <code>Cannot find ./catalina.sh,The file is absent or does not have execute permission</code></p>
 <p>the reason is that I don’t have the permission to execute that file.</p>
-<p>solution: </p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod +x *.sh</span><br></pre></td></tr></table></figure>
+<span id="more"></span>
 
-<p>After making this error disappear, the 404 error also disapears…</p>
-<h1 id="2-a-simple-servlet-demo"><a href="#2-a-simple-servlet-demo" class="headerlink" title="2. a simple servlet demo"></a>2. a simple servlet demo</h1><p>servlet can be seen as a component between request and DAO. For example, assume that we submit a form with “action&#x3D;addUser”, then a servlet  named “addUser” helps us resolve the data from the request and give those data to UserDAO.</p>
+<p>solution: </p>
+<figure class="highlight plaintext hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod +x *.sh</span><br></pre></td></tr></tbody></table></figure>
+
+<p>After making this error disappear, the 404 error also disappears…</p>
+<h1 id="2-a-simple-servlet-demo"><a href="#2-a-simple-servlet-demo" class="headerlink" title="2. a simple servlet demo"></a>2. a simple servlet demo</h1><p>servlet can be seen as a component between request and DAO. For example, assume that we submit a form with “action=addUser” then a servlet  named “addUser” helps us resolve the data from the request and give those data to UserDAO.</p>
 <p>a simple demo: </p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- html --&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">form</span> <span class="attr">method</span>=<span class="string">&quot;post&quot;</span> <span class="attr">action</span>=<span class="string">&quot;/addUser&quot;</span>&gt;</span></span><br><span class="line">      name： <span class="tag">&lt;<span class="name">input</span> <span class="attr">name</span>=<span class="string">&quot;name&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">&quot;submit&quot;</span>&gt;</span>submit<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">&lt;!-- html --&gt;</span></span><br><span class="line"> <span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">method</span>=<span class="hljs-string">"post"</span> <span class="hljs-attr">action</span>=<span class="hljs-string">"/addUser"</span>&gt;</span></span><br><span class="line">      name： <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"name"</span>&gt;</span></span><br><span class="line">      <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"submit"</span>&gt;</span>submit<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></span><br><span class="line">  <span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
 
 <p>servlet</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">AddUserServlet</span> extend HttpServlet &#123;</span><br><span class="line">  <span class="meta">@Override</span></span><br><span class="line">  <span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">doPost</span><span class="params">(httpServletRequest req, HttpServletResponse resp)</span> <span class="keyword">throws</span> ServletException, IOException &#123;</span><br><span class="line">    <span class="type">String</span> <span class="variable">name</span> <span class="operator">=</span> req.getParameter(<span class="string">&quot;name&quot;</span>);</span><br><span class="line">    System.our.println(<span class="string">&quot;name is: &quot;</span> + name)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="title class_">AddUserServlet</span> extend HttpServlet {</span><br><span class="line">  <span class="hljs-meta">@Override</span></span><br><span class="line">  <span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="title function_">doPost</span><span class="hljs-params">(httpServletRequest req, HttpServletResponse resp)</span> <span class="hljs-keyword">throws</span> ServletException, IOException {</span><br><span class="line">    <span class="hljs-type">String</span> <span class="hljs-variable">name</span> <span class="hljs-operator">=</span> req.getParameter(<span class="hljs-string">"name"</span>);</span><br><span class="line">    System.our.println(<span class="hljs-string">"name is: "</span> + name)</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 
 <p>To bind the form post request and the servlet, we need to add some configuration in web.xml file.</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">servlet</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>addUser<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-class</span>&gt;</span>com.demo.servlet.AddUserServlet<span class="tag">&lt;/<span class="name">servlet-class</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">servlet</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>addUser<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/addUser<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">servlet-mapping</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight xml hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">servlet</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">servlet-name</span>&gt;</span>addUser<span class="hljs-tag">&lt;/<span class="hljs-name">servlet-name</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">servlet-class</span>&gt;</span>com.demo.servlet.AddUserServlet<span class="hljs-tag">&lt;/<span class="hljs-name">servlet-class</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">servlet</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">servlet-mapping</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">servlet-name</span>&gt;</span>addUser<span class="hljs-tag">&lt;/<span class="hljs-name">servlet-name</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">url-pattern</span>&gt;</span>/addUser<span class="hljs-tag">&lt;/<span class="hljs-name">url-pattern</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">servlet-mapping</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>also, after servelt 3.0, we can bind the url with servelet by annotation</p>
+<figure class="highlight java hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">@WebServlet("/url")</span></span><br><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="title class_">AddUserServlet</span> extend HttpServlet {</span><br><span class="line">...</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+
 
 <h1 id="3-some-other-points-on-Servlet"><a href="#3-some-other-points-on-Servlet" class="headerlink" title="3. some other points on Servlet"></a>3. some other points on Servlet</h1><h3 id="encoding"><a href="#encoding" class="headerlink" title="encoding"></a>encoding</h3><p>If we input Chinese or Japanese in the input filed above, the servlet can’t get the right parameter value.</p>
 <p>To solve this problem, we need to: </p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">request.setCharacterEncoding(<span class="string">&quot;UTF-8&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// notice that after Tomcat 8, we don&#x27;t need to care about the encoding for get requests. </span></span><br></pre></td></tr></table></figure>
+<figure class="highlight java hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">request.setCharacterEncoding(<span class="hljs-string">"UTF-8"</span>);</span><br><span class="line"><span class="hljs-comment">// notice that after Tomcat 8, we don't need to care about the encoding for get requests. </span></span><br></pre></td></tr></tbody></table></figure>
 
 <h3 id="life-cycle"><a href="#life-cycle" class="headerlink" title="life cycle"></a>life cycle</h3><p>Tomcat helps us to manage the life cycle of Servlet.</p>
 <ul>
 <li>init()</li>
-<li>service( )    - check request method and call responding method(post &#x3D;&gt; doPost)</li>
+<li>service( )    - check request method and call responding method(post =&gt; doPost)</li>
 <li>destroy()</li>
 </ul>
 <p>By default, a servlet was initialized after it  received a request for the first time. After Tomcat was stopped, all the servelet instances will be destroyed. </p>
 <p>We could use the code below to see  at what timing each method is called. </p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">AddUserServlet</span> <span class="keyword">extends</span> <span class="title class_">HttpServlet</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">AddUserServlet</span><span class="params">()</span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;addUserServlet instance is created&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">init</span><span class="params">()</span> <span class="keyword">throws</span> ServletException &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;init method is called&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">service</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="keyword">throws</span> ServletException, IOException &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;service method is called&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">destroy</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;destroy method is called&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="title class_">AddUserServlet</span> <span class="hljs-keyword">extends</span> <span class="title class_">HttpServlet</span> {</span><br><span class="line">    <span class="hljs-keyword">public</span> <span class="title function_">AddUserServlet</span><span class="hljs-params">()</span>{</span><br><span class="line">        System.out.println(<span class="hljs-string">"addUserServlet instance is created"</span>);</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="hljs-meta">@Override</span></span><br><span class="line">    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="title function_">init</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> ServletException {</span><br><span class="line">        System.out.println(<span class="hljs-string">"init method is called"</span>);</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="hljs-meta">@Override</span></span><br><span class="line">    <span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="title function_">service</span><span class="hljs-params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="hljs-keyword">throws</span> ServletException, IOException {</span><br><span class="line">        System.out.println(<span class="hljs-string">"service method is called"</span>);</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="hljs-meta">@Override</span></span><br><span class="line">    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="title function_">destroy</span><span class="hljs-params">()</span> {</span><br><span class="line">        System.out.println(<span class="hljs-string">"destroy method is called"</span>);</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 
 <p>the first time we click the submit button to send a post request, the content below will be printed : </p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">addUserServlet instance is created </span><br><span class="line">init method is called</span><br><span class="line">service method is called</span><br></pre></td></tr></table></figure>
+<figure class="highlight java hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">addUserServlet instance is created </span><br><span class="line">init method is called</span><br><span class="line">service method is called</span><br></pre></td></tr></tbody></table></figure>
 
 <p>after that, if we submitted a new post request, only the service method is called. If we ternimate Tomcat, destroy method would be called.</p>
 <p>Actually, we can change the initilazation  timing  of a servlet</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">servlet</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>...</span><br><span class="line">   <span class="tag">&lt;<span class="name">servlet-class</span>&gt;</span>...</span><br><span class="line">     <span class="comment">&lt;!-- a servet with a smaller number initializes earlier--&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">load-on-startup</span>&gt;</span>1<span class="tag">&lt;/<span class="name">load-on-startup</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;/<span class="name">servlet</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight xml hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">servlet</span>&gt;</span></span><br><span class="line">   <span class="hljs-tag">&lt;<span class="hljs-name">servlet-name</span>&gt;</span>...</span><br><span class="line">   <span class="hljs-tag">&lt;<span class="hljs-name">servlet-class</span>&gt;</span>...</span><br><span class="line">     <span class="hljs-comment">&lt;!-- a servet with a smaller number initializes earlier--&gt;</span></span><br><span class="line">     <span class="hljs-tag">&lt;<span class="hljs-name">load-on-startup</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-name">load-on-startup</span>&gt;</span> </span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">servlet</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
 
 <p>For every Servlet, only one instance will be created, which means that it’s unsecure to use in multi-thread sceinarios.</p>
-<h3 id="session-managemenet"><a href="#session-managemenet" class="headerlink" title="session managemenet"></a>session managemenet</h3></div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/JavaWeb/">JavaWeb</a></div><!--!--></article></div><!--!--><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/2022/12/16/Leetcode-3-Longest-Substring-Without-Repeating-Characters/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">Leetcode-3- Longest Substring Without Repeating Characters</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/2022/12/15/notes-JDBC/"><span class="level-item">notes-JDBC</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">Comments</h3><div id="disqus_thread"><noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></div><script>var disqus_config = function () {
-            this.page.url = 'http://example.com/2022/12/15/notes-JavaWeb/';
-            this.page.identifier = '2022/12/15/notes-JavaWeb/';
-        };
-        (function() {
-            var d = document, s = d.createElement('script');  
-            s.src = '//' + 'seiketsu-891' + '.disqus.com/embed.js';
-            s.setAttribute('data-timestamp', +new Date());
-            (d.head || d.body).appendChild(s);
-        })();</script></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar is-rounded" src="/img/avatar.png" alt="Louie"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">Louie</p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">Posts</p><a href="/archives"><p class="title">7</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Categories</p><a href="/categories"><p class="title">3</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Tags</p><a href="/tags"><p class="title">7</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/" target="_blank" rel="noopener">Follow</a></div></div></div><!--!--><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">Categories</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/JavaWeb/"><span class="level-start"><span class="level-item">JavaWeb</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/Leetcode/"><span class="level-start"><span class="level-item">Leetcode</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/categories/database/"><span class="level-start"><span class="level-item">database</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></div></div></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">Recents</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-12-16T00:32:17.000Z">2022-12-16</time></p><p class="title"><a href="/2022/12/16/Leetcode-3-Longest-Substring-Without-Repeating-Characters/">Leetcode-3- Longest Substring Without Repeating Characters</a></p><p class="categories"><a href="/categories/Leetcode/">Leetcode</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-12-15T10:39:31.000Z">2022-12-15</time></p><p class="title"><a href="/2022/12/15/notes-JavaWeb/">notes-JavaWeb</a></p><p class="categories"><a href="/categories/JavaWeb/">JavaWeb</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-12-15T05:11:06.000Z">2022-12-15</time></p><p class="title"><a href="/2022/12/15/notes-JDBC/">notes-JDBC</a></p><p class="categories"><a href="/categories/database/">database</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-12-15T03:57:49.000Z">2022-12-15</time></p><p class="title"><a href="/2022/12/15/Leetcode-2-Add-Two-Numbers/">Leetcode-2-Add-Two-Numbers</a></p><p class="categories"><a href="/categories/Leetcode/">Leetcode</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-12-14T13:18:58.000Z">2022-12-14</time></p><p class="title"><a href="/2022/12/14/Leetcode-1-Two-Sum/">Leetcode 1 Two Sum</a></p><p class="categories"><a href="/categories/Leetcode/">Leetcode</a></p></div></article></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">Archives</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2022/12/"><span class="level-start"><span class="level-item">December 2022</span></span><span class="level-end"><span class="level-item tag">7</span></span></a></li></ul></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">Tags</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/JDBC/"><span class="tag">JDBC</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Java/"><span class="tag">Java</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/JavaWeb/"><span class="tag">JavaWeb</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Leetcode/"><span class="tag">Leetcode</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/course-note/"><span class="tag">course-note</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/course-notes/"><span class="tag">course-notes</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/notes/"><span class="tag">notes</span><span class="tag">1</span></a></div></div></div></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/">Louie&#039;s blog</a><p class="is-size-7"><span>&copy; 2022 John Doe</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("en");</script><script>var IcarusThemeSettings = {
-            article: {
-                highlight: {
-                    clipboard: true,
-                    fold: 'unfolded'
-                }
-            }
-        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="Back to top" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
-      window.cookieconsent.initialise({
-        type: "info",
-        theme: "edgeless",
-        static: false,
-        position: "bottom-left",
-        content: {
-          message: "This website uses cookies to improve your experience.",
-          dismiss: "Got it!",
-          allow: "Allow cookies",
-          deny: "Decline",
-          link: "Learn more",
-          policy: "Cookie Policy",
-          href: "https://www.cookiesandyou.com/",
+<h3 id="session-managemenet"><a href="#session-managemenet" class="headerlink" title="session managemenet"></a>session managemenet</h3><ol>
+<li><p>create/ get session</p>
+<figure class="highlight java hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-type">HttpSession</span> <span class="hljs-variable">session</span> <span class="hljs-operator">=</span> req.getSession(); <span class="hljs-comment">// if there is no session, then create a new session</span></span><br><span class="line">System.out.println(session.getId());</span><br></pre></td></tr></tbody></table></figure>
+
+<p>After we send a request, the server with send a sessionId back</p>
+<figure class="highlight plaintext hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Response Headers</span><br><span class="line"></span><br><span class="line">Set-Cookie: xxx</span><br></pre></td></tr></tbody></table></figure>
+
+<p>Then if we send a request again, we can see Cookie in the request header.</p>
+<figure class="highlight plaintext hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Request Headers</span><br><span class="line"></span><br><span class="line">Cookie:xxx</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+</li>
+<li><p>common APIs</p>
+<figure class="highlight java hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">request.getSession(<span class="hljs-literal">true</span>) <span class="hljs-comment">// the same as request.getSession();</span></span><br><span class="line">request.getSession(<span class="hljs-literal">false</span>) <span class="hljs-comment">// not create a session if there isn't one.</span></span><br><span class="line">session.isNew() <span class="hljs-comment">// is the session is newly created</span></span><br><span class="line">session.getMaxInactiveInterval() <span class="hljs-comment">// default: 1800 (1800s/30min)</span></span><br><span class="line">session.setMaxInactiveInterval(xx)</span><br><span class="line">session.invalidate()   <span class="hljs-comment">// forcely make the session invalidated</span></span><br></pre></td></tr></tbody></table></figure>
+</li>
+<li><p>store infromation in session attributes</p>
+<figure class="highlight java hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">session.setAttribute(<span class="hljs-string">"name"</span>, <span class="hljs-string">"Alex"</span>);</span><br><span class="line">session.getAttribute(<span class="hljs-string">"name"</span>);</span><br><span class="line">session.removeAttribute(<span class="hljs-string">"name"</span>);</span><br></pre></td></tr></tbody></table></figure>
+
+<p>Session attributes can be used to store information about the user’s preferences, the state of the application, or any other data that need to be persisted across requests.</p>
+</li>
+</ol>
+<p>​       some common use cases:</p>
+<ul>
+<li>store user’s preferences. ex: a user’s preferred language or theme</li>
+<li>state management. ex: the process of a multi-step form./ the items in a user’s shopping cart</li>
+<li>user authentication.ex: user’s login status</li>
+<li>analytics:ex: user’s action with the application, which ca be used for analytics purpose</li>
+</ul>
+<p>Note that if we restart  Tomcat, the session created last time will be invalidated. The reason is that the session data including session ID  is typically stored in the  memory on he server and the server’s memory is wiped when the application is restarted. If we want to persist session data across application restars, we can use  a database to store the session data. </p>
+<h1 id="4-server-side-forwarding-amp-client-side-redirecting"><a href="#4-server-side-forwarding-amp-client-side-redirecting" class="headerlink" title="4. server-side forwarding &amp; client-side redirecting"></a>4. server-side forwarding &amp; client-side redirecting</h1><ol>
+<li><p>server-side forwarding</p>
+<p>basic process: </p>
+<p>![image-20221217164955862](/Users/wangjingjie/Library/Application Support/typora-user-images/image-20221217164955862.png)</p>
+<ol start="2">
+<li>client-side redirecting</li>
+</ol>
+<p>basic process:</p>
+<p>![image-20221217170021424](/Users/wangjingjie/Library/Application Support/typora-user-images/image-20221217170021424.png)</p>
+<ol start="3">
+<li><p>code demo</p>
+<figure class="highlight html hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">method</span>=<span class="hljs-string">"get"</span> <span class="hljs-attr">action</span>=<span class="hljs-string">"/forwarding"</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"submit"</span>&gt;</span>forward test<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span></span><br><span class="line"></span><br><span class="line"> <span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">method</span>=<span class="hljs-string">"get"</span> <span class="hljs-attr">action</span>=<span class="hljs-string">"/redirecting"</span>&gt;</span></span><br><span class="line">     <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"submit"</span>&gt;</span>redirecting test<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></span><br><span class="line"> <span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+
+<figure class="highlight java hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="title class_">ForwardServlet</span> <span class="hljs-keyword">extends</span> <span class="title class_">HttpServlet</span> {</span><br><span class="line">    <span class="hljs-meta">@Override</span></span><br><span class="line">    <span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="title function_">doGet</span><span class="hljs-params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="hljs-keyword">throws</span> ServletException, IOException {</span><br><span class="line">        req.getRequestDispatcher(<span class="hljs-string">"/test2.html"</span>).forward(req, resp);</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="title class_">RedirectServlet</span> <span class="hljs-keyword">extends</span> <span class="title class_">HttpServlet</span> {</span><br><span class="line">    <span class="hljs-meta">@Override</span></span><br><span class="line">    <span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="title function_">doGet</span><span class="hljs-params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="hljs-keyword">throws</span> ServletException, IOException {</span><br><span class="line">        resp.sendRedirect(<span class="hljs-string">"/test2.html"</span>);</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure></li>
+</ol>
+</li>
+</ol>
+<h1 id="5-thymleaf"><a href="#5-thymleaf" class="headerlink" title="5. thymleaf"></a>5. thymleaf</h1><p>basic usage: </p>
+<ul>
+<li><p>config</p>
+<figure class="highlight xml hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">context-param</span>&gt;</span></span><br><span class="line">     <span class="hljs-tag">&lt;<span class="hljs-name">param-name</span>&gt;</span>view-prefix<span class="hljs-tag">&lt;/<span class="hljs-name">param-name</span>&gt;</span></span><br><span class="line">     <span class="hljs-tag">&lt;<span class="hljs-name">param-value</span>&gt;</span>/<span class="hljs-tag">&lt;/<span class="hljs-name">param-value</span>&gt;</span></span><br><span class="line"><span class="hljs-comment">&lt;!--  / means the directory "web/" --&gt;</span>  </span><br><span class="line"> <span class="hljs-tag">&lt;/<span class="hljs-name">context-param</span>&gt;</span></span><br><span class="line"> <span class="hljs-tag">&lt;<span class="hljs-name">context-param</span>&gt;</span></span><br><span class="line">     <span class="hljs-tag">&lt;<span class="hljs-name">param-name</span>&gt;</span>view-suffix<span class="hljs-tag">&lt;/<span class="hljs-name">param-name</span>&gt;</span></span><br><span class="line">     <span class="hljs-tag">&lt;<span class="hljs-name">param-value</span>&gt;</span>.html<span class="hljs-tag">&lt;/<span class="hljs-name">param-value</span>&gt;</span></span><br><span class="line"> <span class="hljs-tag">&lt;/<span class="hljs-name">context-param</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+</li>
+<li><p>create ViewBaseServlet and make other servlet extends it</p>
+<figure class="highlight java hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">package</span> com.demo.servlet;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">import</span> org.thymeleaf.TemplateEngine;</span><br><span class="line"><span class="hljs-keyword">import</span> org.thymeleaf.context.WebContext;</span><br><span class="line"><span class="hljs-keyword">import</span> org.thymeleaf.templateresolver.ServletContextTemplateResolver;</span><br><span class="line"><span class="hljs-keyword">import</span> javax.servlet.ServletContext;</span><br><span class="line"><span class="hljs-keyword">import</span> javax.servlet.ServletException;</span><br><span class="line"><span class="hljs-keyword">import</span> javax.servlet.http.HttpServlet;</span><br><span class="line"><span class="hljs-keyword">import</span> javax.servlet.http.HttpServletRequest;</span><br><span class="line"><span class="hljs-keyword">import</span> javax.servlet.http.HttpServletResponse;</span><br><span class="line"><span class="hljs-keyword">import</span> java.io.IOException;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="title class_">ViewBaseServlet</span> <span class="hljs-keyword">extends</span> <span class="title class_">HttpServlet</span> {</span><br><span class="line">    <span class="hljs-keyword">private</span> TemplateEngine templateEngine;</span><br><span class="line"></span><br><span class="line">    <span class="hljs-meta">@Override</span></span><br><span class="line">    <span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment">     * initialize a templateEngine</span></span><br><span class="line"><span class="hljs-comment">     */</span></span><br><span class="line">    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="title function_">init</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> ServletException {</span><br><span class="line">        <span class="hljs-type">ServletContext</span> <span class="hljs-variable">servletContext</span> <span class="hljs-operator">=</span> <span class="hljs-built_in">this</span>.getServletContext();</span><br><span class="line">        <span class="hljs-type">ServletContextTemplateResolver</span> <span class="hljs-variable">templateResolver</span>  <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="title class_">ServletContextTemplateResolver</span>(servletContext);</span><br><span class="line"></span><br><span class="line">        <span class="hljs-type">String</span> <span class="hljs-variable">viewPrefix</span> <span class="hljs-operator">=</span> servletContext.getInitParameter(<span class="hljs-string">"view-prefix"</span>);</span><br><span class="line">        <span class="hljs-type">String</span> <span class="hljs-variable">viewSuffix</span> <span class="hljs-operator">=</span> servletContext.getInitParameter(<span class="hljs-string">"view-suffix"</span>);</span><br><span class="line"></span><br><span class="line">        templateResolver.setPrefix(viewPrefix);</span><br><span class="line">        templateResolver.setPrefix(viewSuffix);</span><br><span class="line"></span><br><span class="line">        <span class="hljs-comment">// set the time-to-live(TTL) value for templates that are cached by the "servletContextTemplateResolver" object</span></span><br><span class="line">        <span class="hljs-comment">// once a template has been processed and cached, it will remain in the cache for 60s before</span></span><br><span class="line">        <span class="hljs-comment">// it's considered stale and need to be re-processed.</span></span><br><span class="line">        <span class="hljs-comment">// This can help improve the need to re-process templates unnecessarily</span></span><br><span class="line">        templateResolver.setCacheTTLMs(<span class="hljs-number">60000L</span>); <span class="hljs-comment">// 60s</span></span><br><span class="line">        <span class="hljs-comment">// templates will be cached after they are processed and the cached version will be used in subsequent requests.</span></span><br><span class="line">        templateResolver.setCacheable(<span class="hljs-literal">true</span>);</span><br><span class="line">        templateResolver.setCharacterEncoding(<span class="hljs-string">"utf-8"</span>);</span><br><span class="line"></span><br><span class="line">        templateEngine = <span class="hljs-keyword">new</span> <span class="title class_">TemplateEngine</span>();</span><br><span class="line">        templateEngine.setTemplateResolver(templateResolver);</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment">     * process a template and send the output back to the client</span></span><br><span class="line"><span class="hljs-comment">     */</span></span><br><span class="line">    <span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="title function_">processTemplate</span> <span class="hljs-params">(String templateName , HttpServletRequest req, HttpServletResponse resp)</span> <span class="hljs-keyword">throws</span> IOException {</span><br><span class="line">        resp.setContentType(<span class="hljs-string">"text/html;charset=UTF-8"</span>);</span><br><span class="line">        <span class="hljs-comment">// webContext is a context object used by the template engine to store information about the current request and response</span></span><br><span class="line">        <span class="hljs-type">WebContext</span> <span class="hljs-variable">webContext</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="title class_">WebContext</span>(req, resp, getServletContext());</span><br><span class="line">        <span class="hljs-comment">// process the template using data in webContext and writes the output to the response's writer object</span></span><br><span class="line">        templateEngine.process(templateName,webContext, resp.getWriter());</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+
+<figure class="highlight java hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">@WebServlet("/index")</span></span><br><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="title class_">IndexServlet</span>  <span class="hljs-keyword">extends</span> <span class="title class_">ViewBaseServlet</span> {</span><br><span class="line">    <span class="hljs-meta">@Override</span></span><br><span class="line">    <span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="title function_">doGet</span><span class="hljs-params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="hljs-keyword">throws</span> ServletException, IOException {</span><br><span class="line">        List&lt;Users&gt; users = userDao.getAll();</span><br><span class="line">        <span class="hljs-type">HttpSession</span> <span class="hljs-variable">session</span> <span class="hljs-operator">=</span> req.getSession();</span><br><span class="line">        session.setAttribute(<span class="hljs-string">"users"</span>, users);</span><br><span class="line">        <span class="hljs-built_in">super</span>.processTemplate(<span class="hljs-string">"index"</span>, req, resp);</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+</li>
+<li><p>write html</p>
+<figure class="highlight html hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">tr</span> <span class="hljs-attr">th:if</span>=<span class="hljs-string">"${ #lists.isEmpty(session.users) }"</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">td</span> <span class="hljs-attr">colspan</span>=<span class="hljs-string">"2"</span>&gt;</span>no data<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">tr</span> <span class="hljs-attr">th:unless</span>=<span class="hljs-string">"${ #lists.isEmpty(session.users) }"</span> <span class="hljs-attr">th:each</span> = <span class="hljs-string">"user : ${session.users}"</span>&gt;</span></span><br><span class="line">  <span class="hljs-tag">&lt;<span class="hljs-name">td</span> <span class="hljs-attr">th:text</span> = <span class="hljs-string">"${user.name}"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span></span><br><span class="line">  <span class="hljs-tag">&lt;<span class="hljs-name">td</span> <span class="hljs-attr">th:text</span> = <span class="hljs-string">"${user.hobby}"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure></li>
+</ul>
+<h1 id="6-common-scopes"><a href="#6-common-scopes" class="headerlink" title="6. common scopes"></a>6. common scopes</h1><p>I only mentioned seesion cope  above, actually there are 2 other common scopes in Java Web.</p>
+<ol>
+<li><p>request scope:</p>
+<p>data in this scope is only valid during a single request/response cycle</p>
+</li>
+</ol>
+<figure class="highlight java hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">request.setAttribute(<span class="hljs-string">"name"</span>, <span class="hljs-string">"Alex"</span>);</span><br><span class="line">request.sendRedirect(<span class="hljs-string">"page2"</span>); <span class="hljs-comment">// we can't get "name" by request.getAttribute("name") in Page2Servlet</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// but things became different when it comes to server-side forwaring</span></span><br><span class="line">request.getRequestDispatcher(<span class="hljs-string">"page2"</span>).forward(request, response);</span><br><span class="line"><span class="hljs-comment">// this time we can get the name in  Page2Servlet as the request/response cycle is ended after sending repsonse from Page2Servlet</span></span><br></pre></td></tr></tbody></table></figure>
+
+<ol start="2">
+<li><p>application scope:</p>
+<p>data in this scope is valid for the entire lifetime of the web application</p>
+</li>
+</ol>
+<pre><code class="java">ServletContext application = request.getServletContext();
+application.setAttribute("name", "Alex");
+application.getAttribute("name", "Alex");
+</code></pre>
+</body></html>
+    
+    </div>
+    
+    <div class="columns is-variable is-1 is-multiline is-mobile">
+    
+        <span class="column is-narrow"><a class="tag is-light article-tag" href="/tags/JavaWeb/">#JavaWeb</a></span>
+    
+    </div>
+    
+    
+    <div class="columns is-mobile is-multiline article-nav">
+        <span class="column is-12-mobile is-half-desktop  article-nav-prev">
+            
+            <a href="/2022/12/16/Leetcode-3-Longest-Substring-Without-Repeating-Characters/">Leetcode-3- Longest Substring Without Repeating Characters</a>
+            
+        </span>
+        <span class="column is-12-mobile is-half-desktop  article-nav-next">
+            
+            <a href="/2022/12/15/notes-JDBC/">notes-JDBC</a>
+            
+        </span>
+    </div>
+    
+</article>
+
+
+
+
+    </div>
+</section>
+    <footer class="footer">
+    <div class="container">
+        <div class="columns content">
+            <div class="column is-narrow has-text-centered">
+                &copy; 2022 Louie&nbsp;
+                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a
+                        target="_blank" rel="noopener" href="http://github.com/ppoffice/hexo-theme-minos">Minos</a>
+            </div>
+            <div class="column is-hidden-mobile"></div>
+
+           
+            
+        </div>
+    </div>
+</footer>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment-with-locales.min.js"></script>
+
+<!-- test if the browser is outdated -->
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" target="_blank" rel="noopener" href="http://outdatedbrowser.com/">Update my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="//cdnjs.cloudflare.com/ajax/libs/outdated-browser/1.1.5/outdatedbrowser.min.js"></script>
+<script>
+    $(document).ready(function () {
+        // plugin function, place inside DOM ready function
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        })
+    });
+</script>
+
+<script>
+    window.FontAwesomeConfig = {
+        searchPseudoElements: true
+    }
+    moment.locale("en-AU");
+</script>
+
+
+    
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<script>
+    MathJax.Hub.Config({
+        "HTML-CSS": {
+            matchFontHeight: false
         },
-        palette: {
-          popup: {
-            background: "#edeff5",
-            text: "#838391"
-          },
-          button: {
-            background: "#4b81e8"
-          },
+        SVG: {
+            matchFontHeight: false
         },
-      });
-    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
-            if (typeof $.fn.lightGallery === 'function') {
-                $('.article').lightGallery({ selector: '.gallery-item' });
+        CommonHTML: {
+            matchFontHeight: false
+        },
+        tex2jax: {
+            inlineMath: [
+                ['$','$'],
+                ['\\(','\\)']
+            ]
+        }
+    });
+</script>
+
+    
+    
+    
+    
+<script src="//cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.8/js/lightgallery-all.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/justifiedGallery/3.6.5/js/jquery.justifiedGallery.min.js"></script>
+<script>
+    (function ($) {
+        $(document).ready(function () {
+            if (typeof($.fn.lightGallery) === 'function') {
+                $('.article.gallery').lightGallery({ selector: '.gallery-item' });
             }
-            if (typeof $.fn.justifiedGallery === 'function') {
-                if ($('.justified-gallery > p > .gallery-item').length) {
-                    $('.justified-gallery > p > .gallery-item').unwrap();
-                }
+            if (typeof($.fn.justifiedGallery) === 'function') {
+                $('.justified-gallery > p > .gallery-item').unwrap();
                 $('.justified-gallery').justifiedGallery();
             }
-        });</script><!--!--><!--!--><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="Type something..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
-            loadInsight({"contentUrl":"/content.json"}, {"hint":"Type something...","untitled":"(Untitled)","posts":"Posts","pages":"Pages","categories":"Categories","tags":"Tags"});
-        });</script></body></html>
+        });
+    })(jQuery);
+</script>
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
+    <style>
+        .hljs {
+            position: relative;
+        }
+
+        .hljs .clipboard-btn {
+            float: right;
+            color: #9a9a9a;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .hljs .clipboard-btn:hover {
+          color: #8a8a8a;
+        }
+
+        .hljs > .clipboard-btn {
+            display: none;
+            position: absolute;
+            right: 4px;
+            top: 4px;
+        }
+
+        .hljs:hover > .clipboard-btn {
+            display: inline;
+        }
+
+        .hljs > figcaption > .clipboard-btn {
+            margin-right: 4px;
+        }
+    </style>
+    <script>
+      $(document).ready(function () {
+        $('figure.hljs').each(function(i, figure) {
+          var codeId = 'code-' + i;
+          var code = figure.querySelector('.code');
+          var copyButton = $('<button>Copy <i class="far fa-clipboard"></i></button>');
+          code.id = codeId;
+          copyButton.addClass('clipboard-btn');
+          copyButton.attr('data-clipboard-target-id', codeId);
+
+          var figcaption = figure.querySelector('figcaption');
+
+          if (figcaption) {
+            figcaption.append(copyButton[0]);
+          } else {
+            figure.prepend(copyButton[0]);
+          }
+        })
+
+        var clipboard = new ClipboardJS('.clipboard-btn', {
+          target: function(trigger) {
+            return document.getElementById(trigger.getAttribute('data-clipboard-target-id'));
+          }
+        });
+        clipboard.on('success', function(e) {
+          e.clearSelection();
+        })
+      })
+    </script>
+
+    
+    
+
+    
+
+
+
+<script src="/js/script.js"></script>
+
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-mask"></div>
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="Type something..." />
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: 'Posts',
+                PAGES: 'Pages',
+                CATEGORIES: 'Categories',
+                TAGS: 'Tags',
+                UNTITLED: '(Untitled)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+    
+</body>
+</html>

@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html class="has-navbar-fixed-top">
+<head>
+    <meta charset="utf-8">
+<title>course-notes bilibilib clone2 - Louie&#39;s blog</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/outdated-browser/1.1.5/outdatedbrowser.min.css">
+
+
+
+
+<meta name="description" content="">
+
+
+
+
+
+    <meta name="description" content="chapter 2 user moduelRESTful URL conventions the path must be plural nouns . ex: &#x2F;users   (bad: &#x2F;getUsers) try to keep all characters in lower-case form. Use - to connect words. ex: &#x2F; users-fans  (bad">
+<meta property="og:type" content="article">
+<meta property="og:title" content="course-notes bilibilib clone2">
+<meta property="og:url" content="http://example.com/2022/12/16/course-notes-bilibili-clone2/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="chapter 2 user moduelRESTful URL conventions the path must be plural nouns . ex: &#x2F;users   (bad: &#x2F;getUsers) try to keep all characters in lower-case form. Use - to connect words. ex: &#x2F; users-fans  (bad">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-12-16T10:13:20.000Z">
+<meta property="article:modified_time" content="2022-12-21T08:49:42.482Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="course-notes">
+<meta name="twitter:card" content="summary">
+
+
+
+
+
+<link rel="icon" href="/favicon.png">
+
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Ovo|Source+Code+Pro">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
+
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.8/css/lightgallery.min.css">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/justifiedGallery/3.6.5/css/justifiedGallery.min.css">
+
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+<script defer src="//use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+<body>
+    
+<nav class="navbar is-transparent is-fixed-top navbar-main" role="navigation" aria-label="main navigation">
+    <div class="container">
+        <div class="navbar-brand">
+            <a class="navbar-item navbar-logo" href="/">
+                
+                <img src="/images/logo.png" alt="" height="28">
+                
+            </a>
+            <div class="navbar-burger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        
+        <div class="navbar-menu navbar-start">
+            
+            <a class="navbar-item "
+               href="/archives">Archives</a>
+            
+            <a class="navbar-item "
+               href="/categories">Categories</a>
+            
+            <a class="navbar-item "
+               href="/tags">Tags</a>
+            
+            <a class="navbar-item "
+               href="/about">About</a>
+            
+        </div>
+        
+        <div class="navbar-menu navbar-end">
+            
+            <a class="navbar-item search" title="Search" href="javascript:;">
+                <i class="fas fa-search"></i>
+            </a>
+            
+            
+            
+            <a class="navbar-item" title="GitHub" target="_blank" rel="noopener" href="https://github.com/ppoffice/hexo-theme-minos">
+                
+                <i class="fab fa-github"></i>
+                
+            </a>
+               
+            
+        </div>
+    </div>
+</nav>
+
+    <section class="section">
+    <div class="container">
+    <article class="article content gallery" itemscope itemprop="blogPost">
+    <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
+        
+            course-notes bilibilib clone2
+        
+    </h1>
+    <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
+        <span class="column is-narrow">
+            
+                <time datetime="2022-12-16T10:13:20.000Z" itemprop="datePublished">Dec 16 2022</time>
+            
+        </span>
+        
+        <span class="column is-narrow article-category">
+            <i class="far fa-folder"></i>
+            <a class="article-category-link" href="/categories/project/">project</a>
+        </span>
+        
+        
+    </div>
+    <div class="article-entry is-size-6-mobile" itemprop="articleBody">
+    
+        <html><head></head><body><h1 id="chapter-2-user-moduel"><a href="#chapter-2-user-moduel" class="headerlink" title="chapter 2 user moduel"></a>chapter 2 user moduel</h1><h2 id="RESTful-URL-conventions"><a href="#RESTful-URL-conventions" class="headerlink" title="RESTful URL conventions"></a>RESTful URL conventions</h2><ul>
+<li>the path must be plural nouns . ex: /users   (bad: /getUsers)</li>
+<li>try to keep all characters in lower-case form. Use - to connect words. ex: / users-fans  (bad: /usersFans)</li>
+</ul>
+<p>some examples:</p>
+<ul>
+<li>GET:    /users/20   =&gt;  get user list</li>
+<li>POST:  /users        =&gt;  create new user</li>
+<li>PUT:   /users/20     =&gt; modify the user with id 20</li>
+<li>PUT:   /users          =&gt; modify a batch ofl users </li>
+<li>DELETE:   /users/20  =&gt;  delete the user with id 20</li>
+</ul>
+<p>some relatively complex GET API</p>
+<ul>
+<li><p>users?gender=male&amp;sort=created-time-desc   =&gt; filter + sort</p>
+</li>
+<li><p>users?size=10&amp;no=1    =&gt; pagination</p>
+ <span id="more"></span></li>
+</ul>
+<h2 id="Packaging-response-data"><a href="#Packaging-response-data" class="headerlink" title="Packaging response data"></a>Packaging response data</h2><ol>
+<li>create a class in domain package in Dao</li>
+</ol>
+<figure class="highlight java hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">package</span> com.bili.domain;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="title class_">JsonResponse</span>&lt;T&gt; {</span><br><span class="line">   <span class="hljs-keyword">private</span> String code;</span><br><span class="line">   <span class="hljs-keyword">private</span> String msg;</span><br><span class="line">   <span class="hljs-keyword">private</span> T data;</span><br><span class="line"></span><br><span class="line">   <span class="hljs-keyword">public</span> <span class="title function_">JsonResponse</span><span class="hljs-params">(String code, String msg)</span>{</span><br><span class="line">       <span class="hljs-built_in">this</span>.code =code;</span><br><span class="line">       <span class="hljs-built_in">this</span>.msg = msg;</span><br><span class="line">   }</span><br><span class="line"></span><br><span class="line">   <span class="hljs-keyword">public</span> <span class="title function_">JsonResponse</span><span class="hljs-params">(T data)</span>{</span><br><span class="line">       <span class="hljs-built_in">this</span>.data = data;</span><br><span class="line">       <span class="hljs-built_in">this</span>.msg = <span class="hljs-string">"success"</span>;</span><br><span class="line">       <span class="hljs-built_in">this</span>.code = <span class="hljs-string">"0"</span>;</span><br><span class="line">   }</span><br><span class="line"></span><br><span class="line">   <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> JsonResponse&lt;String&gt; <span class="title function_">success</span><span class="hljs-params">()</span>{</span><br><span class="line">       <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="title class_">JsonResponse</span>&lt;&gt;(<span class="hljs-literal">null</span>);</span><br><span class="line">   }</span><br><span class="line"></span><br><span class="line">   <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> JsonResponse&lt;String&gt; <span class="title function_">success</span><span class="hljs-params">(String data)</span>{</span><br><span class="line">       <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="title class_">JsonResponse</span>&lt;&gt;(data);</span><br><span class="line">   }</span><br><span class="line"></span><br><span class="line">   <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> JsonResponse&lt;String&gt; <span class="title function_">failed</span><span class="hljs-params">()</span>{</span><br><span class="line">       <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="title class_">JsonResponse</span>&lt;&gt;(<span class="hljs-string">"1"</span>, <span class="hljs-string">"failed"</span>);</span><br><span class="line">   }</span><br><span class="line"></span><br><span class="line">   <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> JsonResponse&lt;String&gt; <span class="title function_">failed</span><span class="hljs-params">(String code, String msg)</span>{</span><br><span class="line">       <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="title class_">JsonResponse</span>&lt;&gt;(code ,msg);</span><br><span class="line">   }</span><br><span class="line"></span><br><span class="line">    <span class="hljs-keyword">public</span> String <span class="title function_">getCode</span><span class="hljs-params">()</span> {</span><br><span class="line">        <span class="hljs-keyword">return</span> code;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="hljs-keyword">public</span> String <span class="title function_">getMsg</span><span class="hljs-params">()</span> {</span><br><span class="line">        <span class="hljs-keyword">return</span> msg;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="hljs-keyword">public</span> T <span class="title function_">getData</span><span class="hljs-params">()</span> {</span><br><span class="line">        <span class="hljs-keyword">return</span> data;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="title function_">setCode</span><span class="hljs-params">(String code)</span> {</span><br><span class="line">        <span class="hljs-built_in">this</span>.code = code;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="title function_">setMsg</span><span class="hljs-params">(String msg)</span> {</span><br><span class="line">        <span class="hljs-built_in">this</span>.msg = msg;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="title function_">setData</span><span class="hljs-params">(T data)</span> {</span><br><span class="line">        <span class="hljs-built_in">this</span>.data = data;</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+
+<ol start="2">
+<li>create a HttpMessageConverter</li>
+</ol>
+<figure class="highlight java hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">package</span> com.bili.service.config;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// @Configuration is used to indicate that a class contains bean definition for the application context.</span></span><br><span class="line"><span class="hljs-comment">// this class is used to create and configure the "HttpMessageConverters" bean.</span></span><br><span class="line"><span class="hljs-meta">@Configuration</span></span><br><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="title class_">JsonHttpMessageConverterConfig</span> {</span><br><span class="line">    <span class="hljs-meta">@Bean</span></span><br><span class="line">    <span class="hljs-comment">// @Primary indicated that the bean should be given priority over any other beans of the same type</span></span><br><span class="line">    <span class="hljs-comment">// that may be defined in the application context</span></span><br><span class="line">    <span class="hljs-meta">@Primary</span></span><br><span class="line">    <span class="hljs-keyword">public</span> HttpMessageConverters <span class="title function_">fastJsonHttpConverters</span><span class="hljs-params">()</span>{</span><br><span class="line">      <span class="hljs-comment">//FastJsonHttpMessageConverter is a custom HttpMessageConverter implementation to convert between JSON and Java objects.</span></span><br><span class="line">        <span class="hljs-type">FastJsonHttpMessageConverter</span> <span class="hljs-variable">converter</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="title class_">FastJsonHttpMessageConverter</span>();</span><br><span class="line">        <span class="hljs-type">FastJsonConfig</span> <span class="hljs-variable">config</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="title class_">FastJsonConfig</span>();</span><br><span class="line">        config.setDateFormat(<span class="hljs-string">"yy MM dd HH:mm:ss"</span>);</span><br><span class="line">        config.setSerializerFeatures(</span><br><span class="line">                SerializerFeature.PrettyFormat,</span><br><span class="line">                <span class="hljs-comment">// sometimes null strings are still needed to be displayed on the page as empty string; </span></span><br><span class="line">                <span class="hljs-comment">// the same with list, map, etc.</span></span><br><span class="line">                SerializerFeature.WriteNullStringAsEmpty, </span><br><span class="line">                SerializerFeature.WriteNullListAsEmpty,</span><br><span class="line">                SerializerFeature.WriteMapNullValue,</span><br><span class="line">                SerializerFeature.MapSortField,</span><br><span class="line">                <span class="hljs-comment">// disable circular reference</span></span><br><span class="line">                SerializerFeature.DisableCircularReferenceDetect</span><br><span class="line">        );</span><br><span class="line">        converter.setFastJsonConfig(config);</span><br><span class="line">        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="title class_">HttpMessageConverters</span>(converter);</span><br><span class="line">      }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>In the above, we disabled circular reference. But what does circular reference mean?  Take a look at the code below.</p>
+<figure class="highlight java hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">List&lt;Object&gt; list = <span class="hljs-keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">     <span class="hljs-type">Object</span> <span class="hljs-variable">obj</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="title class_">Object</span>();</span><br><span class="line">     list.add(obj);</span><br><span class="line">     list.add(obj);</span><br><span class="line"></span><br><span class="line">     System.out.println(JSONObject.toJSONString(list));</span><br><span class="line">     <span class="hljs-comment">// [{},{"$ref":"$[0]"}] =&gt; not what we want.</span></span><br><span class="line">     System.out.println(JSONObject.toJSONString(list, SerializerFeature.DisableCircularReferenceDetect));</span><br><span class="line">     <span class="hljs-comment">// [{},{}]</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h2 id="global-exception-handler"><a href="#global-exception-handler" class="headerlink" title="global exception handler"></a>global exception handler</h2><ol>
+<li><p>create a domain named “ConditionException” to encapsulate common exceptions.</p>
+<figure class="highlight java hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">package</span> com.bili.domain.exception;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="title class_">ConditionException</span>  <span class="hljs-keyword">extends</span> <span class="title class_">RuntimeException</span>{</span><br><span class="line">    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-type">long</span> <span class="hljs-variable">serialVersionUID</span> <span class="hljs-operator">=</span> <span class="hljs-number">1L</span>;</span><br><span class="line"></span><br><span class="line">    <span class="hljs-keyword">private</span> String code;</span><br><span class="line"></span><br><span class="line">    <span class="hljs-keyword">public</span> <span class="title function_">ConditionException</span><span class="hljs-params">(String code, String name)</span>{</span><br><span class="line">        <span class="hljs-built_in">super</span>(name);</span><br><span class="line">        <span class="hljs-built_in">this</span>.code = code;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="hljs-keyword">public</span> <span class="title function_">ConditionException</span><span class="hljs-params">(String name)</span>{</span><br><span class="line">        <span class="hljs-built_in">super</span>(name);</span><br><span class="line">        code = <span class="hljs-string">"500"</span>;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="hljs-keyword">public</span> String <span class="title function_">getCode</span><span class="hljs-params">()</span>{</span><br><span class="line">        <span class="hljs-keyword">return</span> code;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="title function_">setCode</span><span class="hljs-params">(String code)</span> {</span><br><span class="line">        <span class="hljs-built_in">this</span>.code = code;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+</li>
+<li><p>create a handler</p>
+<figure class="highlight java hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">package</span> com.bili.service.handler;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">import</span> javax.servlet.http.HttpServletRequest;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// ControllerAdvice is used to define global exception handling for controller.</span></span><br><span class="line"><span class="hljs-comment">// methods defined here will be called whenever an exception is thrown from a controller method</span></span><br><span class="line"><span class="hljs-meta">@ControllerAdvice</span></span><br><span class="line"><span class="hljs-comment">// The order annotation is often used in conjunction with exception handling to specify priority of methods.</span></span><br><span class="line"><span class="hljs-meta">@Order(Ordered.HIGHEST_PRECEDENCE)</span></span><br><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="title class_">CommonGlobalExceptionHandler</span> {</span><br><span class="line"></span><br><span class="line">    <span class="hljs-meta">@ExceptionHandler(value = Exception.class)</span></span><br><span class="line">    <span class="hljs-comment">// @ResponseBody is used to indicate that the return value of a method should be written directly to the HTTP response body.</span></span><br><span class="line">    <span class="hljs-meta">@ResponseBody</span></span><br><span class="line">    <span class="hljs-comment">// order can be used before a method. ex: @order(1)-- lower number, higher priority</span></span><br><span class="line">    <span class="hljs-comment">// why write HttpServletRequest here?</span></span><br><span class="line">    <span class="hljs-comment">// it's common to write it because HttpServletRequest can give us some information about the</span></span><br><span class="line">    <span class="hljs-comment">// Http request that caused the exception.</span></span><br><span class="line">    <span class="hljs-keyword">public</span> JsonResponse&lt;String&gt; <span class="title function_">commonExceptionHandler</span><span class="hljs-params">(HttpServletRequest req, Exception e)</span>{</span><br><span class="line">        <span class="hljs-type">String</span> <span class="hljs-variable">errMessage</span> <span class="hljs-operator">=</span> e.getMessage();</span><br><span class="line">        <span class="hljs-keyword">if</span>(e <span class="hljs-keyword">instanceof</span> ConditionException){</span><br><span class="line">            <span class="hljs-type">ConditionException</span> <span class="hljs-variable">ex</span> <span class="hljs-operator">=</span> (ConditionException) e;</span><br><span class="line">            <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="title class_">JsonResponse</span>&lt;&gt;(ex.getCode(), errMessage);</span><br><span class="line">        }<span class="hljs-keyword">else</span>{</span><br><span class="line">            <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="title class_">JsonResponse</span>&lt;&gt;(<span class="hljs-string">"500"</span>, errMessage);</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<h2 id="add-some-utils"><a href="#add-some-utils" class="headerlink" title="add some utils"></a>add some utils</h2></li>
+</ol>
+<p>​     here I add 3 util classes, which are for encryption and decryption</p>
+<h1 id="1-user-account"><a href="#1-user-account" class="headerlink" title="1. user account"></a>1. user account</h1><h2 id="basic-login-x2F-register-logic"><a href="#basic-login-x2F-register-logic" class="headerlink" title="basic login /register logic"></a>basic login /register logic</h2><ol>
+<li><p>create user table and user-info table</p>
+</li>
+<li><p>create corresponding domain classes</p>
+</li>
+<li><p>register basic logic</p>
+<figure class="highlight java hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="title function_">addUser</span><span class="hljs-params">(User user)</span> {</span><br><span class="line">        <span class="hljs-comment">// data validation</span></span><br><span class="line">        <span class="hljs-type">String</span> <span class="hljs-variable">phone</span> <span class="hljs-operator">=</span> user.getPhone();</span><br><span class="line">        <span class="hljs-keyword">if</span>(phone == <span class="hljs-literal">null</span> || phone.isBlank()){</span><br><span class="line">            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="title class_">ConditionException</span>(<span class="hljs-string">"phone number cannot be empty"</span>);</span><br><span class="line">        }</span><br><span class="line">        <span class="hljs-keyword">if</span>(getUserByPhone(phone)!=<span class="hljs-literal">null</span>){</span><br><span class="line">            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="title class_">ConditionException</span>(<span class="hljs-string">"this phone number has been registered"</span>);</span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line">        <span class="hljs-comment">// generate Md5Password</span></span><br><span class="line">        <span class="hljs-type">Date</span> <span class="hljs-variable">timeNow</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="title class_">Date</span>();</span><br><span class="line">        <span class="hljs-type">String</span> <span class="hljs-variable">salt</span> <span class="hljs-operator">=</span> String.valueOf(timeNow.getTime());</span><br><span class="line">        String passwordRaw;</span><br><span class="line">        <span class="hljs-keyword">try</span>{</span><br><span class="line">           passwordRaw =  RSAUtil.decrypt(user.getPassword());</span><br><span class="line">        }<span class="hljs-keyword">catch</span> (Exception e){</span><br><span class="line">           <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="title class_">ConditionException</span>(<span class="hljs-string">"password decryption failed"</span>);</span><br><span class="line">        }</span><br><span class="line">        <span class="hljs-type">String</span> <span class="hljs-variable">md5Password</span> <span class="hljs-operator">=</span> MD5Util.sign(passwordRaw, salt, <span class="hljs-string">"UTF-8"</span>);</span><br><span class="line"></span><br><span class="line">        <span class="hljs-comment">// set data</span></span><br><span class="line">        user.setSalt(salt);</span><br><span class="line">        user.setPassword(md5Password);</span><br><span class="line">        user.setCreateTime(timeNow);</span><br><span class="line">        </span><br><span class="line">  </span><br><span class="line">        <span class="hljs-comment">// addUser</span></span><br><span class="line">        userDao.addUser(user);</span><br><span class="line"></span><br><span class="line">        <span class="hljs-comment">// set userInfo data and add UserInfo</span></span><br><span class="line">        <span class="hljs-type">UserInfo</span> <span class="hljs-variable">userInfo</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="title class_">UserInfo</span>();</span><br><span class="line">        userInfo.setUserId(user.getId());</span><br><span class="line">        userInfo.setNick(UserConstant.DEFAULT_NICK);</span><br><span class="line">        userInfo.setBirth(UserConstant.DEFAULT_BIRTH);</span><br><span class="line">        userInfo.setGender(UserConstant.GENDER_UNKNOWN);</span><br><span class="line">        userInfo.setCreateTime(timeNow);</span><br><span class="line"></span><br><span class="line">        userDao.addUserInfo(userInfo);</span><br><span class="line">    }</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+
+<ol start="4">
+<li>login</li>
+</ol>
+<figure class="highlight java hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// controller</span></span><br><span class="line"><span class="hljs-meta">@PostMapping("/user-tokens")</span></span><br><span class="line"><span class="hljs-keyword">public</span> JsonResponse&lt;String&gt; <span class="title function_">login</span><span class="hljs-params">(<span class="hljs-meta">@RequestBody</span> User user)</span>{</span><br><span class="line">        <span class="hljs-type">String</span> <span class="hljs-variable">token</span> <span class="hljs-operator">=</span>  userService.login(user);</span><br><span class="line">        <span class="hljs-keyword">return</span> JsonResponse.success(token);</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// service</span></span><br><span class="line"> <span class="hljs-keyword">public</span> String <span class="title function_">login</span><span class="hljs-params">(User user)</span> { </span><br><span class="line">        <span class="hljs-comment">// validation</span></span><br><span class="line">        <span class="hljs-type">String</span> <span class="hljs-variable">phone</span> <span class="hljs-operator">=</span> user.getPhone();</span><br><span class="line">        <span class="hljs-keyword">if</span>(phone == <span class="hljs-literal">null</span> || phone.isBlank()){</span><br><span class="line">            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="title class_">ConditionException</span>(<span class="hljs-string">"Phone number cannot be empty"</span>);</span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line">        <span class="hljs-type">User</span> <span class="hljs-variable">userDb</span>  <span class="hljs-operator">=</span> getUserByPhone(phone);</span><br><span class="line">        <span class="hljs-keyword">if</span>(userDb == <span class="hljs-literal">null</span>){</span><br><span class="line">            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="title class_">ConditionException</span>(<span class="hljs-string">"This phone number has not been registered"</span>);</span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line">        <span class="hljs-comment">// passsword </span></span><br><span class="line">        String passwordRaw;</span><br><span class="line">        <span class="hljs-keyword">try</span>{</span><br><span class="line">             passwordRaw = RSAUtil.decrypt(user.getPassword());</span><br><span class="line">        }<span class="hljs-keyword">catch</span> (Exception e){</span><br><span class="line">             <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="title class_">ConditionException</span>(<span class="hljs-string">"Password decryption failed"</span>);</span><br><span class="line">        }</span><br><span class="line">        <span class="hljs-type">String</span> <span class="hljs-variable">passwordMd5</span> <span class="hljs-operator">=</span> MD5Util.sign(passwordRaw, userDb.getSalt(), <span class="hljs-string">"UTF-8"</span>);</span><br><span class="line">        <span class="hljs-keyword">if</span>(!passwordMd5.equals(userDb.getPassword())){</span><br><span class="line">            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="title class_">ConditionException</span>(<span class="hljs-string">"The phone number and password don't match"</span>);</span><br><span class="line">        }</span><br><span class="line">        </span><br><span class="line">        <span class="hljs-comment">// return token</span></span><br><span class="line">        <span class="hljs-keyword">return</span> TokenUtil.generateToken(userDb.getId());</span><br><span class="line"> }</span><br></pre></td></tr></tbody></table></figure></li>
+</ol>
+<h2 id="JWT-token-authentication"><a href="#JWT-token-authentication" class="headerlink" title="JWT token authentication"></a>JWT token authentication</h2><ol>
+<li>some information on <em><strong>session-based authentication</strong></em></li>
+</ol>
+<ul>
+<li><p>basic process</p>
+<p> user login </p>
+<p> =&gt; the server creates a new session and assigns a session identifier to the user (a sesseion identifier is usually a randomly generated string that is stored on the server and associated with a particuar user)</p>
+<p> =&gt; the session identifier is stored in a cookie on the user’s computer</p>
+<p> =&gt; subsequent request : user send the cookie</p>
+<p> =&gt; the server use the session identifier  to look up the user’s sesson and verity their identity</p>
+</li>
+<li><p>drawbacks</p>
+</li>
+<li><p>statefulness: it requries the server to store  information about each user’s session, ex: session identifiers, login credentials, user’s permissions…</p>
+</li>
+<li><p>security: session identifiers are stored in cookies, so they are vulneralbel to certain types of attacks.</p>
+</li>
+<li><p>scalability: it can be challenging to main session state acrpss multiple servers.</p>
+</li>
+</ul>
+<ol start="2">
+<li><p>JWT token authentication introduction</p>
+<ul>
+<li><p>JWT: JSON Web token. It’s a standard for representing claims securely.</p>
+</li>
+<li><p>3 parts : </p>
+<p>(1)header: 2 parts =&gt; the type of the token(JWT), the signing algorithm</p>
+<p>(2)payload: contains the claims, which are statements about an entity(ex:user) and additional data</p>
+<p>(3)signature</p>
+</li>
+</ul>
+<p>an example: </p>
+<figure class="highlight java hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">Header:</span><br><span class="line">{</span><br><span class="line">   <span class="hljs-string">"alg"</span>: <span class="hljs-string">"HS256"</span>,</span><br><span class="line">   <span class="hljs-string">"type"</span>: <span class="hljs-string">"JWT"</span></span><br><span class="line">}</span><br><span class="line">Encoded Header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9</span><br><span class="line"></span><br><span class="line">payload: </span><br><span class="line">{</span><br><span class="line">  <span class="hljs-string">"name"</span>: <span class="hljs-string">"John Doe"</span>,</span><br><span class="line">  <span class="hljs-string">"iat"</span>: <span class="hljs-number">1516239022</span> <span class="hljs-comment">// issued at </span></span><br><span class="line">}</span><br><span class="line">Encoded payload: eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ</span><br><span class="line"></span><br><span class="line">Secret: secret <span class="hljs-comment">// a string known only to the issuer and the recipient of the JWT</span></span><br><span class="line">  </span><br><span class="line">Signature: XbPfbIHMI6arZ3Y922BhjWgQzWXcXNrz0ogtVhfEd2o</span><br><span class="line"><span class="hljs-comment">// the signature is created by signing the encoded Header, the encoded payload and the secret with</span></span><br><span class="line"><span class="hljs-comment">// the algorithm specified in the header</span></span><br><span class="line">  </span><br><span class="line">so the complete token is : </span><br><span class="line">eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.XbPfbIHMI6arZ3Y922BhjWgQzWXcXNrz0ogtVhfEd2o</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+
+
+</li>
+<li><p>JWT token authentication code</p>
+<figure class="highlight java hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">package</span> com.bili.service.util;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="title class_">TokenUtil</span> {</span><br><span class="line">   <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-type">String</span> <span class="hljs-variable">ISSUER</span> <span class="hljs-operator">=</span> <span class="hljs-string">"ISSUER"</span>;</span><br><span class="line">   <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> String <span class="title function_">generateToken</span><span class="hljs-params">(Long userId)</span> <span class="hljs-keyword">throws</span> Exception {</span><br><span class="line">       <span class="hljs-type">Algorithm</span> <span class="hljs-variable">algorithm</span> <span class="hljs-operator">=</span> Algorithm.RSA512(RSAUtil.getPublicKey(), RSAUtil.getPrivateKey());</span><br><span class="line"></span><br><span class="line">       <span class="hljs-comment">// Calendar provides a convenient way to perform date and time arithmetic</span></span><br><span class="line">       <span class="hljs-comment">// such as the add operation below</span></span><br><span class="line">       <span class="hljs-type">Calendar</span> <span class="hljs-variable">calendar</span> <span class="hljs-operator">=</span> Calendar.getInstance();</span><br><span class="line">       calendar.setTime(<span class="hljs-keyword">new</span> <span class="title class_">Date</span>());</span><br><span class="line">       calendar.add(Calendar.SECOND, <span class="hljs-number">30</span>);</span><br><span class="line"></span><br><span class="line">       <span class="hljs-keyword">return</span> JWT</span><br><span class="line">               .create()</span><br><span class="line">               .withKeyId(String.valueOf(userId))</span><br><span class="line">               .withIssuer(ISSUER)</span><br><span class="line">               .withExpiresAt(calendar.getTime())</span><br><span class="line">               .sign(algorithm);</span><br><span class="line">   }</span><br><span class="line"></span><br><span class="line">   <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> Long <span class="title function_">verifyToken</span><span class="hljs-params">(String token)</span>{</span><br><span class="line">       <span class="hljs-keyword">try</span>{</span><br><span class="line">           <span class="hljs-type">Algorithm</span> <span class="hljs-variable">algorithm</span> <span class="hljs-operator">=</span> Algorithm.RSA512(RSAUtil.getPublicKey(), RSAUtil.getPrivateKey());</span><br><span class="line">           <span class="hljs-type">JWTVerifier</span> <span class="hljs-variable">verifier</span> <span class="hljs-operator">=</span> JWT.require(algorithm).build();</span><br><span class="line">           <span class="hljs-type">DecodedJWT</span> <span class="hljs-variable">jwt</span> <span class="hljs-operator">=</span> verifier.verify(token);</span><br><span class="line">           <span class="hljs-type">String</span> <span class="hljs-variable">userId</span> <span class="hljs-operator">=</span> jwt.getKeyId();</span><br><span class="line">           <span class="hljs-keyword">return</span> Long.valueOf(userId);</span><br><span class="line">       }<span class="hljs-keyword">catch</span> (TokenExpiredException e){</span><br><span class="line">           <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="title class_">ConditionException</span>(<span class="hljs-string">"555"</span>, <span class="hljs-string">"token expired"</span>);</span><br><span class="line">       }<span class="hljs-keyword">catch</span> (Exception e){</span><br><span class="line">           <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="title class_">ConditionException</span>(<span class="hljs-string">"illegal token"</span>);</span><br><span class="line">       }</span><br><span class="line">   }</span><br><span class="line">}</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure></li>
+</ol>
+<h2 id="getUserIo"><a href="#getUserIo" class="headerlink" title="getUserIo"></a>getUserIo</h2><figure class="highlight java hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">@GetMapping("/users")</span></span><br><span class="line"><span class="hljs-keyword">public</span> JsonResponse&lt;User&gt; <span class="title function_">getUserInfo</span><span class="hljs-params">()</span>{</span><br><span class="line">   <span class="hljs-type">Long</span> <span class="hljs-variable">userId</span> <span class="hljs-operator">=</span> userSupport.getCurrentUserId();</span><br><span class="line">   <span class="hljs-type">User</span> <span class="hljs-variable">user</span> <span class="hljs-operator">=</span>  userService.getUserById(userId);</span><br><span class="line">   <span class="hljs-type">UserInfo</span> <span class="hljs-variable">userInfo</span> <span class="hljs-operator">=</span> userService.getUserInfoByUserId(userId);</span><br><span class="line">   user.setUserInfo(userInfo);</span><br><span class="line">   <span class="hljs-keyword">return</span>  <span class="hljs-keyword">new</span> <span class="title class_">JsonResponse</span>&lt;&gt;(user);</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<figure class="highlight java hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// UserSupport</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">package</span> com.bili.api.support;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">import</span> com.bili.domain.exception.ConditionException;</span><br><span class="line"><span class="hljs-keyword">import</span> com.bili.service.util.TokenUtil;</span><br><span class="line"><span class="hljs-keyword">import</span> org.springframework.stereotype.Component;</span><br><span class="line"><span class="hljs-keyword">import</span> org.springframework.web.context.request.RequestContextHolder;</span><br><span class="line"><span class="hljs-keyword">import</span> org.springframework.web.context.request.ServletRequestAttributes;</span><br><span class="line"></span><br><span class="line"><span class="hljs-meta">@Component</span></span><br><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="title class_">UserSupport</span> {</span><br><span class="line">    <span class="hljs-keyword">public</span> Long <span class="title function_">getCurrentUserId</span><span class="hljs-params">()</span>{</span><br><span class="line">        ServletRequestAttributes requestAttributes= (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();</span><br><span class="line">        <span class="hljs-type">String</span> <span class="hljs-variable">token</span> <span class="hljs-operator">=</span>  requestAttributes.getRequest().getHeader(<span class="hljs-string">"token"</span>);</span><br><span class="line">        <span class="hljs-type">Long</span> <span class="hljs-variable">userId</span> <span class="hljs-operator">=</span> TokenUtil.verifyToken(token);</span><br><span class="line">        <span class="hljs-keyword">if</span>(userId &lt; <span class="hljs-number">0</span>){</span><br><span class="line">            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="title class_">ConditionException</span>(<span class="hljs-string">"illegal userId"</span>);</span><br><span class="line">        }</span><br><span class="line">        <span class="hljs-keyword">return</span> userId;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<h2 id="update-user-x2F-userInfo"><a href="#update-user-x2F-userInfo" class="headerlink" title="update  user / userInfo"></a>update  user / userInfo</h2><p>the basic logic: </p>
+<figure class="highlight java hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">@PutMapping("/users")</span></span><br><span class="line"><span class="hljs-keyword">public</span> JsonResponse&lt;String&gt; <span class="title function_">updateUsers</span><span class="hljs-params">(<span class="hljs-meta">@RequestBody</span> User user)</span> <span class="hljs-keyword">throws</span> Exception {</span><br><span class="line">    <span class="hljs-type">Long</span> <span class="hljs-variable">userId</span> <span class="hljs-operator">=</span> userSupport.getCurrentUserId();</span><br><span class="line">    System.out.println(user.getPhone());</span><br><span class="line">    user.setId(userId);</span><br><span class="line">    userService.updateUsers(user);</span><br><span class="line">    <span class="hljs-keyword">return</span> JsonResponse.success();</span><br><span class="line">}</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+
+<figure class="highlight js hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// service</span></span><br><span class="line">public <span class="hljs-keyword">void</span> <span class="title function_">updateUsers</span>(<span class="title class_">User</span> user) throws <span class="title class_">Exception</span> {</span><br><span class="line">    <span class="title class_">Long</span> id = user.<span class="title function_">getId</span>();</span><br><span class="line">    <span class="title class_">User</span> userDb = userDao.<span class="title function_">getUserById</span>(id);</span><br><span class="line">    <span class="hljs-keyword">if</span>(userDb == <span class="hljs-literal">null</span>) {</span><br><span class="line">        <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="title class_">ConditionException</span>(<span class="hljs-string">"This user does not exist"</span>);</span><br><span class="line">    }</span><br><span class="line">    <span class="hljs-keyword">if</span>(user.<span class="title function_">getPassword</span>() != <span class="hljs-literal">null</span> &amp;&amp; !user.<span class="title function_">getPassword</span>().<span class="title function_">isBlank</span>()){</span><br><span class="line">        <span class="title class_">String</span> passwordRaw = <span class="title class_">RSAUtil</span>.<span class="title function_">decrypt</span>(user.<span class="title function_">getPassword</span>());</span><br><span class="line">        <span class="title class_">String</span> passwordMd5 = <span class="title class_">MD5Util</span>.<span class="title function_">sign</span>(passwordRaw, userDb.<span class="title function_">getSalt</span>(), <span class="hljs-string">"UTF-8"</span>);</span><br><span class="line">        user.<span class="title function_">setPassword</span>(passwordMd5);</span><br><span class="line">    }</span><br><span class="line">    user.<span class="title function_">setUpdateTime</span>(<span class="hljs-keyword">new</span> <span class="title class_">Date</span>());</span><br><span class="line">    userDao.<span class="title function_">updateUsers</span>(user);</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<h1 id="2-user-follow-module"><a href="#2-user-follow-module" class="headerlink" title="2. user follow module"></a>2. user follow module</h1><p>Here we create 2 tables and corresponding entities:</p>
+<ul>
+<li>user_follwing : the information about followees and followers, the key columns are : userId, followingId, groudId</li>
+<li>following_group:  store information about follow group type.ex: “default”, “special”, “quietly”</li>
+</ul>
+<h2 id="adding-a-following-relationship"><a href="#adding-a-following-relationship" class="headerlink" title="adding a following relationship"></a>adding a following relationship</h2><figure class="highlight java hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment"> * add a following relationship</span></span><br><span class="line"><span class="hljs-comment"> */</span></span><br><span class="line"><span class="hljs-meta">@PostMapping("/user-following")</span></span><br><span class="line"><span class="hljs-keyword">public</span> JsonResponse&lt;String&gt; <span class="title function_">addUserFollowing</span><span class="hljs-params">(<span class="hljs-meta">@RequestBody</span> UserFollowing userFollowing)</span>{</span><br><span class="line">    <span class="hljs-type">Long</span> <span class="hljs-variable">userId</span>  <span class="hljs-operator">=</span> userSupport.getCurrentUserId();</span><br><span class="line">    userFollowing.setUserId(userId);</span><br><span class="line">    userFollowingService.addUserFollowing(userFollowing);</span><br><span class="line">    <span class="hljs-keyword">return</span> JsonResponse.success();</span><br><span class="line">}</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+
+<figure class="highlight java hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// service</span></span><br><span class="line"><span class="hljs-meta">@Transactional</span></span><br><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="title function_">addUserFollowing</span><span class="hljs-params">(UserFollowing userFollowing)</span>{</span><br><span class="line">    <span class="hljs-comment">// check groupId</span></span><br><span class="line">    <span class="hljs-type">Long</span> <span class="hljs-variable">groupId</span> <span class="hljs-operator">=</span>userFollowing.getGroupId();</span><br><span class="line">    <span class="hljs-keyword">if</span>( groupId == <span class="hljs-literal">null</span>){</span><br><span class="line">        <span class="hljs-type">Long</span> <span class="hljs-variable">defaultGroupId</span> <span class="hljs-operator">=</span> followingGroupService.getByType(UserConstant.USER_FOLLOWING_GROUP_TYPE_DEFAULT).getId();</span><br><span class="line">        userFollowing.setGroupId(defaultGroupId);</span><br><span class="line">    }<span class="hljs-keyword">else</span>{</span><br><span class="line">       <span class="hljs-type">FollowingGroup</span> <span class="hljs-variable">followingGroupDb</span> <span class="hljs-operator">=</span> followingGroupService.getById(groupId);</span><br><span class="line">       <span class="hljs-keyword">if</span>(followingGroupDb == <span class="hljs-literal">null</span>){</span><br><span class="line">           <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="title class_">ConditionException</span>(<span class="hljs-string">"The following group does not exist."</span>);</span><br><span class="line">       }</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="hljs-comment">// check if the user a user wants to follow exists</span></span><br><span class="line">    <span class="hljs-type">User</span> <span class="hljs-variable">followingUserDb</span> <span class="hljs-operator">=</span> userService.getUserById(userFollowing.getFollowingId());</span><br><span class="line">    <span class="hljs-keyword">if</span>(followingUserDb == <span class="hljs-literal">null</span>){</span><br><span class="line">        <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="title class_">ConditionException</span>(<span class="hljs-string">"The user you are trying to follow does not exist."</span>);</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="hljs-comment">// delete the existing following relationship first</span></span><br><span class="line">    <span class="hljs-comment">// prevent duplicate follow relationships;</span></span><br><span class="line">    userFollowingDao.deleteUserFollowing( userFollowing.getUserId(),  userFollowing.getFollowingId());</span><br><span class="line"></span><br><span class="line">    <span class="hljs-comment">// add</span></span><br><span class="line">    userFollowing.setCreateTime(<span class="hljs-keyword">new</span> <span class="title class_">Date</span>());</span><br><span class="line">    userFollowingDao.addUserFollowing(userFollowing);</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+
+
+<h2 id="get-followees-and-followers"><a href="#get-followees-and-followers" class="headerlink" title="get followees and followers"></a>get followees and followers</h2><h2 id="add-ang-get-follow-group-types"><a href="#add-ang-get-follow-group-types" class="headerlink" title="add ang get follow group types"></a>add ang get follow group types</h2><p>this one is very simple, so I don’t need to write any notes here.</p>
+<h2 id="get-paginated-user-information"><a href="#get-paginated-user-information" class="headerlink" title="get paginated user information"></a>get paginated user information</h2><p>maily use for search user with or without a nickname keyword.</p>
+</body></html>
+    
+    </div>
+    
+    <div class="columns is-variable is-1 is-multiline is-mobile">
+    
+        <span class="column is-narrow"><a class="tag is-light article-tag" href="/tags/course-notes/">#course-notes</a></span>
+    
+    </div>
+    
+    
+    <div class="columns is-mobile is-multiline article-nav">
+        <span class="column is-12-mobile is-half-desktop  article-nav-prev">
+            
+            <a href="/2022/12/17/Leetcode-9-Palindrome-Number/">Leetcode-9. Palindrome Number</a>
+            
+        </span>
+        <span class="column is-12-mobile is-half-desktop  article-nav-next">
+            
+            <a href="/2022/12/16/Leetcode-3-Longest-Substring-Without-Repeating-Characters/">Leetcode-3- Longest Substring Without Repeating Characters</a>
+            
+        </span>
+    </div>
+    
+</article>
+
+
+
+
+    </div>
+</section>
+    <footer class="footer">
+    <div class="container">
+        <div class="columns content">
+            <div class="column is-narrow has-text-centered">
+                &copy; 2022 Louie&nbsp;
+                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a
+                        target="_blank" rel="noopener" href="http://github.com/ppoffice/hexo-theme-minos">Minos</a>
+            </div>
+            <div class="column is-hidden-mobile"></div>
+
+           
+            
+        </div>
+    </div>
+</footer>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment-with-locales.min.js"></script>
+
+<!-- test if the browser is outdated -->
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" target="_blank" rel="noopener" href="http://outdatedbrowser.com/">Update my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="//cdnjs.cloudflare.com/ajax/libs/outdated-browser/1.1.5/outdatedbrowser.min.js"></script>
+<script>
+    $(document).ready(function () {
+        // plugin function, place inside DOM ready function
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        })
+    });
+</script>
+
+<script>
+    window.FontAwesomeConfig = {
+        searchPseudoElements: true
+    }
+    moment.locale("en-AU");
+</script>
+
+
+    
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<script>
+    MathJax.Hub.Config({
+        "HTML-CSS": {
+            matchFontHeight: false
+        },
+        SVG: {
+            matchFontHeight: false
+        },
+        CommonHTML: {
+            matchFontHeight: false
+        },
+        tex2jax: {
+            inlineMath: [
+                ['$','$'],
+                ['\\(','\\)']
+            ]
+        }
+    });
+</script>
+
+    
+    
+    
+    
+<script src="//cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.8/js/lightgallery-all.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/justifiedGallery/3.6.5/js/jquery.justifiedGallery.min.js"></script>
+<script>
+    (function ($) {
+        $(document).ready(function () {
+            if (typeof($.fn.lightGallery) === 'function') {
+                $('.article.gallery').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof($.fn.justifiedGallery) === 'function') {
+                $('.justified-gallery > p > .gallery-item').unwrap();
+                $('.justified-gallery').justifiedGallery();
+            }
+        });
+    })(jQuery);
+</script>
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
+    <style>
+        .hljs {
+            position: relative;
+        }
+
+        .hljs .clipboard-btn {
+            float: right;
+            color: #9a9a9a;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .hljs .clipboard-btn:hover {
+          color: #8a8a8a;
+        }
+
+        .hljs > .clipboard-btn {
+            display: none;
+            position: absolute;
+            right: 4px;
+            top: 4px;
+        }
+
+        .hljs:hover > .clipboard-btn {
+            display: inline;
+        }
+
+        .hljs > figcaption > .clipboard-btn {
+            margin-right: 4px;
+        }
+    </style>
+    <script>
+      $(document).ready(function () {
+        $('figure.hljs').each(function(i, figure) {
+          var codeId = 'code-' + i;
+          var code = figure.querySelector('.code');
+          var copyButton = $('<button>Copy <i class="far fa-clipboard"></i></button>');
+          code.id = codeId;
+          copyButton.addClass('clipboard-btn');
+          copyButton.attr('data-clipboard-target-id', codeId);
+
+          var figcaption = figure.querySelector('figcaption');
+
+          if (figcaption) {
+            figcaption.append(copyButton[0]);
+          } else {
+            figure.prepend(copyButton[0]);
+          }
+        })
+
+        var clipboard = new ClipboardJS('.clipboard-btn', {
+          target: function(trigger) {
+            return document.getElementById(trigger.getAttribute('data-clipboard-target-id'));
+          }
+        });
+        clipboard.on('success', function(e) {
+          e.clearSelection();
+        })
+      })
+    </script>
+
+    
+    
+
+    
+
+
+
+<script src="/js/script.js"></script>
+
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-mask"></div>
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="Type something..." />
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: 'Posts',
+                PAGES: 'Pages',
+                CATEGORIES: 'Categories',
+                TAGS: 'Tags',
+                UNTITLED: '(Untitled)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+    
+</body>
+</html>
